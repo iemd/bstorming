@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <?php $Loginid = $this->session->userdata('ID');?>
+<?php $Role = $this->session->userdata('role');?>
 <?php //print_r($this->session); ?>
 <?php if (!empty($Loginid)){ ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Brain Storming | HR</title>
+    <title>Brain Storming | <?php echo $Role; ?></title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <meta name="description" content="brain storming.">
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('assets/images/apple-touch-icon.png');?>">
@@ -119,7 +120,7 @@
               </li>
               <li class="dropdown hidden-xs">
                 <button class="navbar-account-btn" data-toggle="dropdown" aria-haspopup="true">
-                  <img class="rounded" width="36" height="36" src="<?php echo base_url('assets/images/admin.png');?>" alt=""> Welcome <?php echo $this->session->userdata('role');?>
+                  <img class="rounded" width="36" height="36" src="<?php echo base_url('assets/images/admin.png');?>" alt=""> Welcome <?php echo $Role; ?>
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right">
@@ -160,6 +161,7 @@
               color: #0288d1;
           }
       </style>
+      <?php if($Role==HR){ ?>
       <div class="layout-main"><!--left sidebar -->
         <div class="layout-sidebar">
           <div class="layout-sidebar-backdrop"></div>
@@ -177,7 +179,7 @@
                       </div>
                     </form>
                   </li>
-                  <li class="sidenav-heading">Brain Storming | HR</li>
+                  <li class="sidenav-heading">Brain Storming | <?php echo $Role; ?></li>
 
                   <li class="sidenav-item has-subnav active">
                       <a href="<?php echo base_url('AdminPanel/Dasboard'); ?>" aria-haspopup="true">
@@ -259,4 +261,299 @@
             </div>
           </div>
         </div><!--left sidebar -->
+      <?php } if($Role==NH){ ?>
+        <div class="layout-main"><!--left sidebar -->
+        <div class="layout-sidebar">
+          <div class="layout-sidebar-backdrop"></div>
+          <div class="layout-sidebar-body">
+            <div class="custom-scrollbar">
+              <nav id="sidenav" class="sidenav-collapse collapse">
+                <ul class="sidenav">
+                  <li class="sidenav-search hidden-md hidden-lg">
+                    <form class="sidenav-form" action="">
+                      <div class="form-group form-group-sm">
+                        <div class="input-with-icon">
+                          <input class="form-control" type="text" placeholder="Search…">
+                          <span class="icon icon-search input-icon"></span>
+                        </div>
+                      </div>
+                    </form>
+                  </li>
+                  <li class="sidenav-heading">Brain Storming | <?php echo $Role; ?></li>
+                  <li class="sidenav-item has-subnav active">
+                      <a href="<?php echo base_url('AdminPanel/Dasboard'); ?>" aria-haspopup="true">
+                      <span class="sidenav-icon icon icon-home"></span>
+                      <span class="sidenav-label">Dashboards</span>
+                    </a>
+
+                  </li>
+
+                  <li class="sidenav-item has-subnav">
+                      <a href="calendar.php" title="Today Meeting Status">
+                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-label">Calendar</span>
+                    </a>
+                  </li>
+
+                  <li class="sidenav-item has-subnav">
+                      <a href="task.php" title="Employee Status">
+                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-label">Task Management</span>
+                    </a>
+                  </li>
+
+                  <li class="sidenav-item has-subnav">
+                      <a href="rate_store.php" title="Top 20 Ranking of stores">
+                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-label">Rate Store</span>
+                    </a>
+                  </li>
+
+                  <li class="sidenav-item has-subnav">
+                      <a href="push_message.php" title="Brand Store Status">
+                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-label">Push Message</span>
+                    </a>
+                  </li>
+
+                  <li class="sidenav-item has-subnav">
+                      <a href="complain.php" title="Feedback Parameter Wise Report">
+                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-label">Complain Management</span>
+                    </a>
+                  </li>
+
+                  <li class="sidenav-item has-subnav">
+                      <a href="profile.php" title="Bottom 20 Ranking of Stores">
+                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-label">Profile Setting</span>
+                    </a>
+                  </li>
+
+                   <li class="sidenav-item has-subnav">
+                       <a href="employee_competency.php" title="EMPLOYEE COMPETENCY ASSESSMENT">
+                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-label">Employee Competency</span>
+                    </a>
+                  </li>
+
+                  <li class="sidenav-item">
+                       <a href="#" title="ASM MANAGEMENT">
+                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-label">ASM Management</span>
+                    </a>
+                  </li>
+                  <li class="sidenav-item">
+                       <a href="#" title="ZM MANAGEMENT">
+                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-label">ZM Management</span>
+                    </a>
+                  </li>
+                  <li class="sidenav-item">
+                       <a href="#" title="WORK MANAGEMENT">
+                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-label">Work Management</span>
+                    </a>
+                  </li>
+                  <li class="sidenav-item">
+                      <a href="<?php echo base_url('AdminPanel/logOut'); ?>" title="LOGOUT">
+                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-label">Logout</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div><!--left sidebar -->
+      <?php } if($Role == ZM){ ?>
+        <div class="layout-main">
+     <div class="layout-sidebar">
+       <div class="layout-sidebar-backdrop"></div>
+       <div class="layout-sidebar-body">
+         <div class="custom-scrollbar">
+           <nav id="sidenav" class="sidenav-collapse collapse">
+             <ul class="sidenav">
+               <li class="sidenav-search hidden-md hidden-lg">
+                 <form class="sidenav-form" action="">
+                   <div class="form-group form-group-sm">
+                     <div class="input-with-icon">
+                       <input class="form-control" type="text" placeholder="Search…">
+                       <span class="icon icon-search input-icon"></span>
+                     </div>
+                   </div>
+                 </form>
+               </li>
+               <li class="sidenav-heading">Brain Storming | <?php echo $Role; ?></li>
+
+               <li class="sidenav-item has-subnav active">
+                   <a href="<?php echo base_url('AdminPanel/Dasboard'); ?>" aria-haspopup="true">
+                   <span class="sidenav-icon icon icon-home"></span>
+                   <span class="sidenav-label">Dashboards</span>
+                 </a>
+
+               </li>
+
+               <li class="sidenav-item has-subnav">
+                   <a href="calendar.php" title="Today Meeting Status">
+                   <span class="sidenav-icon icon icon-columns"></span>
+                   <span class="sidenav-label">Calendar</span>
+                 </a>
+               </li>
+
+               <li class="sidenav-item has-subnav">
+                   <a href="task.php" title="Employee Status">
+                   <span class="sidenav-icon icon icon-columns"></span>
+                   <span class="sidenav-label">Task Management</span>
+                 </a>
+               </li>
+
+               <li class="sidenav-item has-subnav">
+                   <a href="rate_store.php" title="Top 20 Ranking of stores">
+                   <span class="sidenav-icon icon icon-columns"></span>
+                   <span class="sidenav-label">Rate Store</span>
+                 </a>
+               </li>
+
+               <li class="sidenav-item has-subnav">
+                   <a href="push_message.php" title="Brand Store Status">
+                   <span class="sidenav-icon icon icon-columns"></span>
+                   <span class="sidenav-label">Push Message</span>
+                 </a>
+               </li>
+
+               <li class="sidenav-item has-subnav">
+                   <a href="complain.php" title="Feedback Parameter Wise Report">
+                   <span class="sidenav-icon icon icon-columns"></span>
+                   <span class="sidenav-label">Complain Management</span>
+                 </a>
+               </li>
+
+               <li class="sidenav-item has-subnav">
+                   <a href="profile.php" title="Bottom 20 Ranking of Stores">
+                   <span class="sidenav-icon icon icon-columns"></span>
+                   <span class="sidenav-label">Profile Setting</span>
+                 </a>
+               </li>
+
+                <li class="sidenav-item has-subnav">
+                    <a href="employee_competency.php" title="EMPLOYEE COMPETENCY ASSESSMENT">
+                   <span class="sidenav-icon icon icon-columns"></span>
+                   <span class="sidenav-label">Employee Competency</span>
+                 </a>
+               </li>
+
+               <li class="sidenav-item">
+                    <a href="#" title="ASM MANAGEMENT">
+                   <span class="sidenav-icon icon icon-columns"></span>
+                   <span class="sidenav-label">ASM Management</span>
+                 </a>
+               </li>
+               <li class="sidenav-item">
+                    <a href="#" title="WORK MANAGEMENT">
+                   <span class="sidenav-icon icon icon-columns"></span>
+                   <span class="sidenav-label">Work Management</span>
+                 </a>
+               </li>
+               <li class="sidenav-item">
+                   <a href="<?php echo base_url('AdminPanel/logOut'); ?>" title="LOGOUT">
+                   <span class="sidenav-icon icon icon-columns"></span>
+                   <span class="sidenav-label">Logout</span>
+                 </a>
+               </li>
+             </ul>
+           </nav>
+         </div>
+       </div>
+     </div>
+      <?php } if($Role == ASM){ ?>
+        <div class="layout-main">
+    <div class="layout-sidebar">
+      <div class="layout-sidebar-backdrop"></div>
+      <div class="layout-sidebar-body">
+        <div class="custom-scrollbar">
+          <nav id="sidenav" class="sidenav-collapse collapse">
+            <ul class="sidenav">
+              <li class="sidenav-search hidden-md hidden-lg">
+                <form class="sidenav-form" action="">
+                  <div class="form-group form-group-sm">
+                    <div class="input-with-icon">
+                      <input class="form-control" type="text" placeholder="Search…">
+                      <span class="icon icon-search input-icon"></span>
+                    </div>
+                  </div>
+                </form>
+              </li>
+              <li class="sidenav-heading">Brain Storming | <?php echo $Role; ?></li>
+
+              <li class="sidenav-item has-subnav active">
+                  <a href="<?php echo base_url('AdminPanel/Dasboard'); ?>" aria-haspopup="true">
+                  <span class="sidenav-icon icon icon-home"></span>
+                  <span class="sidenav-label">Dashboards</span>
+                </a>
+
+              </li>
+
+              <li class="sidenav-item has-subnav">
+                  <a href="calendar.php" title="Today Meeting Status">
+                  <span class="sidenav-icon icon icon-columns"></span>
+                  <span class="sidenav-label">Calendar</span>
+                </a>
+              </li>
+
+              <li class="sidenav-item has-subnav">
+                  <a href="task.php" title="Employee Status">
+                  <span class="sidenav-icon icon icon-columns"></span>
+                  <span class="sidenav-label">Task Management</span>
+                </a>
+              </li>
+
+              <li class="sidenav-item has-subnav">
+                  <a href="rate_store.php" title="Top 20 Ranking of stores">
+                  <span class="sidenav-icon icon icon-columns"></span>
+                  <span class="sidenav-label">Rate Store</span>
+                </a>
+              </li>
+
+              <li class="sidenav-item has-subnav">
+                  <a href="push_message.php" title="Brand Store Status">
+                  <span class="sidenav-icon icon icon-columns"></span>
+                  <span class="sidenav-label">Push Message</span>
+                </a>
+              </li>
+
+              <li class="sidenav-item has-subnav">
+                  <a href="complain.php" title="Feedback Parameter Wise Report">
+                  <span class="sidenav-icon icon icon-columns"></span>
+                  <span class="sidenav-label">Complain Management</span>
+                </a>
+              </li>
+
+              <li class="sidenav-item has-subnav">
+                  <a href="profile.php" title="Bottom 20 Ranking of Stores">
+                  <span class="sidenav-icon icon icon-columns"></span>
+                  <span class="sidenav-label">Profile Setting</span>
+                </a>
+              </li>
+
+               <li class="sidenav-item has-subnav">
+                   <a href="employee_competency.php" title="EMPLOYEE COMPETENCY ASSESSMENT">
+                  <span class="sidenav-icon icon icon-columns"></span>
+                  <span class="sidenav-label">Employee Competency</span>
+                </a>
+              </li>
+
+              <li class="sidenav-item">
+                  <a href="<?php echo base_url('AdminPanel/logOut'); ?>" title="LOGOUT">
+                  <span class="sidenav-icon icon icon-columns"></span>
+                  <span class="sidenav-label">Logout</span>
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+      <?php } ?>
   <?php } ?>

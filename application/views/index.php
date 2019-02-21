@@ -1,7 +1,9 @@
 <!-- /header -->
         <!-- Header-->
  <?php $Loginid = $this->session->userdata('ID');?>
+ <?php $Role = $this->session->userdata('role');?>
  <?php if (!empty($Loginid)){ ?>
+      <?php if($Role==HR){ ?>
       <div class="layout-content">
         <div class="layout-content-body">
           <div class="title-bar">
@@ -94,6 +96,55 @@
 
         </div>
       </div>
+      <?php } if($Role==NH){ ?>
+        <div class="layout-content">
+          <div class="layout-content-body">
+            <div class="title-bar">
+
+              <h1 class="title-bar-title">
+                  <span class="d-ib">360<sup>o</sup> Report</span>
+                <div id="time" style="float: right"></div>
+              </h1>
+
+            </div>
+
+
+
+          </div>
+        </div>
+      <?php } if($Role == ZM){ ?>
+        <div class="layout-content">
+         <div class="layout-content-body">
+           <div class="title-bar">
+
+             <h1 class="title-bar-title">
+                 <span class="d-ib">360<sup>o</sup> Report</span>
+               <div id="time" style="float: right"></div>
+             </h1>
+
+           </div>
+
+
+
+         </div>
+       </div>
+       <?php } if($Role == ASM){ ?>
+         <div class="layout-content">
+            <div class="layout-content-body">
+              <div class="title-bar">
+
+                <h1 class="title-bar-title">
+                    <span class="d-ib">360<sup>o</sup> Report</span>
+                  <div id="time" style="float: right"></div>
+                </h1>
+
+              </div>
+
+
+
+            </div>
+          </div>
+         <?php } ?>
     <?php } else { ?>
 
    				  <?php redirect(base_url('AdminPanel')); ?>

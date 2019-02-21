@@ -15,6 +15,7 @@ class AdminPanel extends CI_Controller {
 	public function Dasboard()
 	{
 		$this->load->model('User');
+		$role = $this->session->userdata('role');
 		//$date = date('y-m-d');
 		//$data['editData'] = $this->DataModel->getData();
 		//$data['distributorlist'] = $this->DataModel->distributorlist();
