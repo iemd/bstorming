@@ -39,5 +39,12 @@ class Asm extends CI_Controller {
          redirect(base_url('Asm/createAsm/'), 'refresh', $message);
        }
     }
+		public function viewAsm()
+		{
+				$this->load->model('AsmModel');
+				$data['asmlist'] = $this->AsmModel->getAsmByRoleName(ASM);
+				$this->load->view('common/header');
+				$this->load->view('viewasm',$data);
+		}
 
 }

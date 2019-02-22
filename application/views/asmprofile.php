@@ -23,7 +23,7 @@
                         </div>
                          <div class="col-md-3">
 
-                                    <button type="button" class="btn btn-primary">View ASM Profile</button>
+                                    <a type="button" href="<?php echo base_url('Asm/viewAsm'); ?>" class="btn btn-primary">View ASM Profile</a>
 
                         </div>
                          <div class="col-md-3">

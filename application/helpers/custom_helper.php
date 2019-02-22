@@ -11,6 +11,7 @@ if ( ! function_exists('emp_navactive'))
           "Employee/manageZmProfile",
           "Employee/manageNhProfile",
           "Asm/createAsm",
+          "Asm/viewAsm",
           "Zm/createZm",
           "Nh/createNh"
         );
@@ -27,7 +28,7 @@ if ( ! function_exists('emp_asmactive'))
     function emp_asmactive($uristring = '')
     {
         $class_a = '';
-        $auri = array("Employee/manageAsmProfile","Asm/createAsm");
+        $auri = array("Employee/manageAsmProfile","Asm/createAsm","Asm/viewAsm",);
         if(in_array($uristring,$auri)){
           $class_a = "active";
           return $class_a;
