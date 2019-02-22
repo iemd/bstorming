@@ -19,7 +19,7 @@
                </div>
                 <div class="col-md-1"></div>
                 <div class="col-sm-9">
-                <form action="<?php echo base_url('Employee/addAsm/') ?>" method="post" class="form form-horizontal" >
+                <form action="<?php echo base_url('Asm/addAsm/') ?>" method="post" class="form form-horizontal" >
                   <div class="row">
                         <label for="date" class="col-sm-2">Date:</label>
                         <div class="col-sm-6"><input id="date" name="date" value="<?php echo date('Y-m-d'); ?>" class="form-control" type="text" placeholder="YYYY-MM-DD" readonly></div>

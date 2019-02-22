@@ -18,7 +18,7 @@
                  <div class="row">
                      <div class="col-md-3">
 
-                                <a href="<?php echo base_url('Employee/createZm'); ?>" type="button" class="btn btn-primary">Create ZM</a>
+                                <a href="<?php echo base_url('Zm/createZm'); ?>" type="button" class="btn btn-primary">Create ZM</a>
 
                      </div>
                       <div class="col-md-3">

@@ -20,14 +20,14 @@
 
                 <div class="col-md-1"></div>
                 <div class="col-sm-9">
-                <form action="<?php echo base_url('Zm/addZm/') ?>" method="post" class="form form-horizontal" >
+                <form action="<?php echo base_url('Nh/addNh/') ?>" method="post" class="form form-horizontal" >
                   <div class="row">
                         <label for="date" class="col-sm-2">Date:</label>
                         <div class="col-sm-6"><input id="date" name="date" value="<?php echo date('Y-m-d'); ?>" class="form-control" type="text" placeholder="YYYY-MM-DD" readonly></div>
                   </div><br/>
                   <div class="row">
                         <label for="id" class="col-sm-2">ID:</label>
-                        <div class="col-sm-6"><input id="zmid" name="zmid" class="form-control" type="text" value="ZM00<?php echo count($zm)+1; ?>" readonly></div>
+                        <div class="col-sm-6"><input id="nhid" name="nhid" class="form-control" type="text" value="NH00<?php echo count($nh)+1; ?>" readonly></div>
                   </div><br/>
                     <div class="row">
                       <label for="name" class="col-sm-2">Name:</label>
@@ -52,7 +52,7 @@
                     </div><br/>
                     <div class="row">
                       <div class="col-sm-6">&nbsp;</div>
-                      <div class="col-sm-2"><div class="text-right"><button class="btn btn-primary" type="submit">Create ZM</button></div></div>
+                      <div class="col-sm-2"><div class="text-right"><button class="btn btn-primary" type="submit">Create NH</button></div></div>
                     </div>
                     </form>
                   </div>
