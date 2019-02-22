@@ -50,8 +50,13 @@
                     <div class="col-sm-6"><input id="password" name="password" class="form-control" type="password" autocomplete="off" placeholder="Enter Password"></div>
                     </div><br/>
                     <div class="row">
-                      <div class="col-sm-6">&nbsp;</div>
-                      <div class="col-sm-2"><div class="text-right"><button class="btn btn-primary" type="submit">Create ASM</button></div></div>
+                      <div class="col-sm-4">&nbsp;</div>
+                      <div class="col-sm-4">
+                        <div class="text-right">
+                            <button class="btn btn-primary" type="submit">Create ASM</button>
+                            <a href="<?php echo base_url('Employee/manageAsmProfile'); ?>" class="btn btn-danger" type="button">Cancel</a>
+                        </div>
+                     </div>
                     </div>
                     </form>
                   </div>

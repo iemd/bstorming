@@ -188,16 +188,16 @@
 
                   </li>
 
-                 <li class="sidenav-item has-subnav <?php if($this->uri->uri_string()=="Employee/manageAsmProfile" || $this->uri->uri_string()=="Employee/manageZmProfile" || $this->uri->uri_string()=="Employee/manageNhProfile"){echo "active open";}?>">
+                 <li class="sidenav-item has-subnav <?php echo emp_navactive($this->uri->uri_string()); ?>">
                       <a href="#" title="Employee Management" aria-haspopup="true">
                       <span class="sidenav-icon icon icon-columns"></span>
                       <span class="sidenav-label">Employee Management</span>
                     </a>
                       <ul class="sidenav-subnav collapse">
 
-                          <li class="<?php if($this->uri->uri_string()=="Employee/manageAsmProfile"){echo "active";}?>"><a href="<?php echo base_url('Employee/manageAsmProfile'); ?>">Manage ASM Profile</a></li>
-                          <li class="<?php if($this->uri->uri_string()=="Employee/manageZmProfile"){echo "active";}?>"><a href="<?php echo base_url('Employee/manageZmProfile'); ?>">Manage ZM Profile</a></li>
-                          <li class="<?php if($this->uri->uri_string()=="Employee/manageNhProfile"){echo "active";}?>"><a href="<?php echo base_url('Employee/manageNhProfile'); ?>">Manage NH Profile</a></li>
+                          <li class="<?php echo emp_asmactive($this->uri->uri_string()); ?>"><a href="<?php echo base_url('Employee/manageAsmProfile'); ?>">Manage ASM Profile</a></li>
+                          <li class="<?php echo emp_zmactive($this->uri->uri_string()); ?>"><a href="<?php echo base_url('Employee/manageZmProfile'); ?>">Manage ZM Profile</a></li>
+                          <li class="<?php echo emp_nhactive($this->uri->uri_string()); ?>"><a href="<?php echo base_url('Employee/manageNhProfile'); ?>">Manage NH Profile</a></li>
                     </ul>
                   </li>
                    <li class="sidenav-item has-subnav">
