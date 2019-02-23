@@ -30,7 +30,7 @@ class Asm extends CI_Controller {
                  if($insert)
                  {
                    $message = $this->session->set_flashdata('message', $data['ID'].' Account Name:'.$data['name'].' has been successfully created');
-                   redirect(base_url('Asm/createAsm/'), 'refresh', $message);
+                   redirect(base_url('Asm/viewAsm/'), 'refresh', $message);
 
                  }
 
@@ -46,5 +46,30 @@ class Asm extends CI_Controller {
 				$this->load->view('common/header');
 				$this->load->view('viewasm',$data);
 		}
-
+		public function editAsm($user_id = null)
+		{
+				$this->load->model('UserModel');
+				$data['editasm'] = $this->UserModel->loadUserProfile($user_id);
+				$this->load->view('common/header');
+				$this->load->view('editasm',$data);
+		}
+		public function updateAsm($user_id = null)
+		{
+			$this->load->model('UserModel');
+			$data['password'] = md5($this->input->post('password'));
+			$update = $this->UserModel->updateUser($user_id, $data);
+			if($update){
+				$message = $this->session->set_flashdata('message', 'Updated successfully !');
+				redirect(base_url('Asm/viewAsm'), 'refresh',$message);
+			}
+		}
+		public function deleteAsm($user_id = null)
+		{
+			$this->load->model('UserModel');
+			$deleteasm = $this->UserModel->deleteUser($user_id);
+			if($deleteasm){
+				$message = $this->session->set_flashdata('message', 'Account Deleted !');
+				redirect(base_url('Asm/viewAsm'), 'refresh', $message);
+			}
+		}
 }

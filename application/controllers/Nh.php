@@ -30,7 +30,7 @@ class Nh extends CI_Controller {
                  if($insert)
                  {
                    $message = $this->session->set_flashdata('message', $data['ID'].' Account Name:'.$data['name'].' has been successfully created');
-                   redirect(base_url('Nh/createNh/'), 'refresh', $message);
+                   redirect(base_url('Nh/viewNh/'), 'refresh', $message);
 
                  }
 
@@ -45,5 +45,31 @@ class Nh extends CI_Controller {
 				$data['nhlist'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(NH));
 				$this->load->view('common/header');
 				$this->load->view('viewnh',$data);
+		}
+		public function editNh($user_id = null)
+		{
+				$this->load->model('UserModel');
+				$data['editnh'] = $this->UserModel->loadUserProfile($user_id);
+				$this->load->view('common/header');
+				$this->load->view('editnh',$data);
+		}
+		public function updateNh($user_id = null)
+		{
+			$this->load->model('UserModel');
+			$data['password'] = md5($this->input->post('password'));
+			$update = $this->UserModel->updateUser($user_id, $data);
+			if($update){
+				$message = $this->session->set_flashdata('message', 'Updated successfully !');
+				redirect(base_url('Nh/viewNh'), 'refresh',$message);
+			}
+		}
+		public function deleteNh($user_id = null)
+		{
+			$this->load->model('UserModel');
+			$deleteasm = $this->UserModel->deleteUser($user_id);
+			if($deleteasm){
+				$message = $this->session->set_flashdata('message', 'Account Deleted !');
+				redirect(base_url('Nh/viewNh'), 'refresh', $message);
+			}
 		}
 }

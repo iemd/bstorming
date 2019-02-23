@@ -18,6 +18,10 @@
                      <div class="card">
                 <div class="card-header">
                 <!--<h3 align="center">Rate Store</h3>-->
+                <div class="text-left">
+                   <h5><span class="label label-outline-success"><?php echo $this->session->flashdata('message'); ?></span></h5>
+                   <h5><span class="label label-outline-danger"><?php echo $this->session->flashdata('error'); ?></span></h5>
+                 </div>
                 </div>
                 <div class="card-body">
                 <!--<h3 align="center">&nbsp;</h3>-->
@@ -43,9 +47,11 @@
                              <td><?php echo $zm['doj']; ?></td>
                              <td><?php echo $zm['name']; ?></td>
                              <td><?php echo $zm['mobile']; ?></td>
-                             <td><i class="fa fa-eye fa-2x"></i></td>
-                             <td><i class="fa fa-edit"></i></td>
-
+                             <td><a href="<?php //echo base_url('NewMeeting/editMeeting/').$row['meet_id']; ?>"><i class="fa fa-eye" style="font-size:18px;color:#0288d1"></i></a></td>
+                             <td>
+                               <a href="<?php echo base_url('Zm/editZm/').$zm['user_id']; ?>"><i class="fa fa-edit" style="font-size:18px;color:green"></i></a>&nbsp;&nbsp;
+                               <a href="<?php echo base_url('Zm/deleteZm/').$zm['user_id']; ?>" onclick="return confirm('Are you sure?')"><i class="fa fa-trash" style="font-size:18px;color:red"></i></a></td>
+                            </td>
                         </tr>
                       <?php $i++; } ?>
                       </tbody>

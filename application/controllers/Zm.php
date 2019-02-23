@@ -30,7 +30,7 @@ class Zm extends CI_Controller {
                  if($insert)
                  {
                    $message = $this->session->set_flashdata('message', $data['ID'].' Account Name:'.$data['name'].' has been successfully created');
-                   redirect(base_url('Zm/createZm/'), 'refresh', $message);
+                   redirect(base_url('Zm/viewZm/'), 'refresh', $message);
 
                  }
 
@@ -45,5 +45,31 @@ class Zm extends CI_Controller {
 				$data['zmlist'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(ZM));
 				$this->load->view('common/header');
 				$this->load->view('viewzm',$data);
+		}
+		public function editZm($user_id = null)
+		{
+				$this->load->model('UserModel');
+				$data['editzm'] = $this->UserModel->loadUserProfile($user_id);
+				$this->load->view('common/header');
+				$this->load->view('editzm',$data);
+		}
+		public function updateZm($user_id = null)
+		{
+			$this->load->model('UserModel');
+			$data['password'] = md5($this->input->post('password'));
+			$update = $this->UserModel->updateUser($user_id, $data);
+			if($update){
+				$message = $this->session->set_flashdata('message', 'Updated successfully !');
+				redirect(base_url('Zm/viewZm'), 'refresh',$message);
+			}
+		}
+		public function deleteZm($user_id = null)
+		{
+			$this->load->model('UserModel');
+			$deleteasm = $this->UserModel->deleteUser($user_id);
+			if($deleteasm){
+				$message = $this->session->set_flashdata('message', 'Account Deleted !');
+				redirect(base_url('Zm/viewZm'), 'refresh', $message);
+			}
 		}
 }

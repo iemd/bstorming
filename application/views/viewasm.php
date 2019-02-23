@@ -18,6 +18,10 @@
                      <div class="card">
                 <div class="card-header">
                 <!--<h3 align="center">Rate Store</h3>-->
+                <div class="text-left">
+                   <h5><span class="label label-outline-success"><?php echo $this->session->flashdata('message'); ?></span></h5>
+                   <h5><span class="label label-outline-danger"><?php echo $this->session->flashdata('error'); ?></span></h5>
+                 </div>
                 </div>
                 <div class="card-body">
                 <!--<h3 align="center">&nbsp;</h3>-->
@@ -43,8 +47,11 @@
                              <td><?php echo $asm['doj']; ?></td>
                              <td><?php echo $asm['name']; ?></td>
                              <td><?php echo $asm['mobile']; ?></td>
-                             <td><i class="fa fa-eye fa-2x"></i></td>
-                             <td><i class="fa fa-edit"></i></td>
+                             <td><a href="<?php //echo base_url('NewMeeting/editMeeting/').$row['meet_id']; ?>"><i class="fa fa-eye" style="font-size:18px;color:#0288d1"></i></a></td>
+                             <td>
+                               <a href="<?php echo base_url('Asm/editAsm/').$asm['user_id']; ?>"><i class="fa fa-edit" style="font-size:18px;color:green"></i></a>&nbsp;&nbsp;
+                               <a href="<?php echo base_url('Asm/deleteAsm/').$asm['user_id']; ?>" onclick="return confirm('Are you sure?')"><i class="fa fa-trash" style="font-size:18px;color:red"></i></a></td>
+                            </td>
 
                         </tr>
                       <?php $i++; } ?>
@@ -78,7 +85,6 @@
    <script src="<?php echo base_url('assets/js/application.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/demo.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/compose.min.js');?>"></script>
-
    <!--<script>
      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
