@@ -10,22 +10,22 @@ class Nh extends CI_Controller {
 		}
     public function createNh()
     {
-        $this->load->model('User');
-        $data['nh'] = $this->User->getUserByRoleId($this->User->getRoleId(NH));
+        $this->load->model('UserModel');
+        $data['nh'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(NH));
         $this->load->view('common/header');
         $this->load->view('createnh',$data);
     }
     public function addNh()
     {
-         $this->load->model('User');
+         $this->load->model('UserModel');
          $data['username'] = $this->input->post('username');
-         if(!$this->User->userEmailCheck($data['username'])){
+         if(!$this->UserModel->userEmailCheck($data['username'])){
                  $data['ID'] = $this->input->post('nhid');
                  $data['name'] = $this->input->post('name');
                  $data['password'] = md5($this->input->post('password'));
                  $data['mobile'] = $this->input->post('mobile');
                  $data['doj'] = $this->input->post('doj');
-                 $data['role_id'] = $this->User->getRoleId(NH);
+                 $data['role_id'] = $this->UserModel->getRoleId(NH);
                  $insert =  $this->db->insert('bs_user',$data);
                  if($insert)
                  {

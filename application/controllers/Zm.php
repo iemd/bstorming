@@ -10,22 +10,22 @@ class Zm extends CI_Controller {
 		}
     public function createZm()
     {
-        $this->load->model('User');
-        $data['zm'] = $this->User->getUserByRoleId($this->User->getRoleId(ZM));
+        $this->load->model('UserModel');
+        $data['zm'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(ZM));
         $this->load->view('common/header');
         $this->load->view('createzm',$data);
     }
     public function addZm()
     {
-         $this->load->model('User');
+         $this->load->model('UserModel');
          $data['username'] = $this->input->post('username');
-         if(!$this->User->userEmailCheck($data['username'])){
+         if(!$this->UserModel->userEmailCheck($data['username'])){
                  $data['ID'] = $this->input->post('zmid');
                  $data['name'] = $this->input->post('name');
                  $data['password'] = md5($this->input->post('password'));
                  $data['mobile'] = $this->input->post('mobile');
                  $data['doj'] = $this->input->post('doj');
-                 $data['role_id'] = $this->User->getRoleId(ZM);
+                 $data['role_id'] = $this->UserModel->getRoleId(ZM);
                  $insert =  $this->db->insert('bs_user',$data);
                  if($insert)
                  {

@@ -14,7 +14,7 @@ class AdminPanel extends CI_Controller {
 
 	public function Dasboard()
 	{
-		$this->load->model('User');
+		$this->load->model('UserModel');
 		$role = $this->session->userdata('role');
 		//$date = date('y-m-d');
 		//$data['editData'] = $this->DataModel->getData();
@@ -44,8 +44,8 @@ class AdminPanel extends CI_Controller {
 		$password =  $this->input->post('password');
 		//$email = $this->input->post('email');
 		$remember = $this->session->set_userdata('remember_me', TRUE);
-		$this->load->model('User');
-		$result = $this->User->authenticate($username, $password, $remember);
+		$this->load->model('UserModel');
+		$result = $this->UserModel->authenticate($username, $password, $remember);
 		if($result >0){
 			redirect(base_url('AdminPanel/Dasboard'));
 		}else{
