@@ -39,4 +39,11 @@ class Nh extends CI_Controller {
          redirect(base_url('Nh/createNh/'), 'refresh', $message);
        }
     }
+		public function viewNh()
+		{
+				$this->load->model('UserModel');
+				$data['nhlist'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(NH));
+				$this->load->view('common/header');
+				$this->load->view('viewnh',$data);
+		}
 }

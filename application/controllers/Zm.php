@@ -39,4 +39,11 @@ class Zm extends CI_Controller {
          redirect(base_url('Zm/createZm/'), 'refresh', $message);
        }
     }
+		public function viewZm()
+		{
+				$this->load->model('UserModel');
+				$data['zmlist'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(ZM));
+				$this->load->view('common/header');
+				$this->load->view('viewzm',$data);
+		}
 }

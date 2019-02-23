@@ -23,7 +23,7 @@
                            </div>
                             <div class="col-md-3">
 
-                                       <button type="button" class="btn btn-primary">View NH Profile</button>
+                                       <a type="button" href="<?php echo base_url('Nh/viewNh'); ?>" class="btn btn-primary">View NH Profile</a>
 
                            </div>
                             <div class="col-md-3">
