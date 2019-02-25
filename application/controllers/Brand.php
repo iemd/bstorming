@@ -6,7 +6,7 @@ class Brand extends CI_Controller {
 	 public function index()
 		{
 			$this->load->view('common/header');
-			$this->load->view('brand');
+			$this->load->view('store');
 		}
 		public function createBrand()
     {
