@@ -207,7 +207,7 @@
                     </a>
                       <ul class="sidenav-subnav collapse">
 
-                          <li><a href="brand_management.php">Brand Management</a></li>
+                          <li><a href="<?php echo base_url('Store'); ?>">Brand Management</a></li>
                           <li><a href="store_management.php">Store ID & Password Management</a></li>
                           <li><a href="view_store.php">View Store Activity</a></li>
                       <li><a href="#">Complain Management</a></li>
