@@ -33,11 +33,12 @@
                           <th>Store ID</th>
                           <th>Store Name</th>
                           <th>Address</th>
-                          <th>City</th>
-                          <th>Pincode</th>
+                          <!--<th>City</th>-->
+                          <!--<th>Pincode</th>-->
                           <th>Manager Name</th>
                           <th>Mobile No.</th>
                           <th>Date</th>
+                          <th>Brand</th>
                           <th>Action</th>
                         </tr>
                       </thead>
@@ -49,12 +50,14 @@
                              <td><?php echo $store['StoreID']; ?></td>
                              <td><?php echo $store['store_name']; ?></td>
                              <td><?php echo $store['address']; ?></td>
-                             <td><?php echo $store['city']; ?></td>
-                             <td><?php echo $store['pincode']; ?></td>
+                             <!--<td><?php //echo $store['city']; ?></td>
+                             <td><?php //echo $store['pincode']; ?></td>-->
                              <td><?php echo $store['manager_name']; ?></td>
                              <td><?php echo $store['mobileno']; ?></td>
                              <td><?php echo $store['created_at']; ?></td>
+                              <td></td>
                              <td>
+                               <a href="<?php //echo base_url('Store/'); ?>" class="btn btn-primary btn-xs" type="button">Add Brand</a>
                                <a href="<?php echo base_url('Store/editStore/').$store['store_id']; ?>"><i class="fa fa-edit" style="font-size:18px;color:green"></i></a>&nbsp;&nbsp;
                                <a href="<?php echo base_url('Store/deleteStore/').$store['store_id']; ?>" onclick="return confirm('Are you sure?')"><i class="fa fa-trash" style="font-size:18px;color:red"></i></a></td>
                             </td>
