@@ -37,9 +37,13 @@ if ( ! function_exists('store_navactive'))
         $auri = array(
 
           "Brand/",
+          "Store/",
           "Brand/viewBrand",
           "Brand/createBrand",
-          "Brand/editBrand"
+          "Brand/editBrand",
+          "Store/viewStore",
+          "Store/createStore",
+          "Store/editStore"
 
         );
         if(in_array($uristring,$auri)){

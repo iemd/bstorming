@@ -23,7 +23,7 @@
                        </div>
                         <div class="col-md-3">
 
-                                   <button type="button" class="btn btn-primary">Manage Store</button>
+                                   <a type="button" href="<?php echo base_url('Store/viewStore'); ?>" class="btn btn-primary">Manage Store</a>
 
                        </div>
                         <div class="col-md-3">
