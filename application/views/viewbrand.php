@@ -31,7 +31,7 @@
                         <tr>
                           <th>Sl. No.</th>
                           <th>Brand Name</th>
-                          <th>Created At</th>
+                          <th>Date</th>
                           <th>Action</th>
                         </tr>
                       </thead>
@@ -43,8 +43,8 @@
                              <td><?php echo $brand['brand_name']; ?></td>
                              <td><?php echo $brand['created_at']; ?></td>
                              <td>
-                               <a href="<?php echo base_url('Store/editBrand/').$brand['brand_id']; ?>"><i class="fa fa-edit" style="font-size:18px;color:green"></i></a>&nbsp;&nbsp;
-                               <a href="<?php echo base_url('Store/deleteBrand/').$brand['brand_id']; ?>" onclick="return confirm('Are you sure?')"><i class="fa fa-trash" style="font-size:18px;color:red"></i></a></td>
+                               <a href="<?php echo base_url('Brand/editBrand/').$brand['brand_id']; ?>"><i class="fa fa-edit" style="font-size:18px;color:green"></i></a>&nbsp;&nbsp;
+                               <a href="<?php echo base_url('Brand/deleteBrand/').$brand['brand_id']; ?>" onclick="return confirm('Are you sure?')"><i class="fa fa-trash" style="font-size:18px;color:red"></i></a></td>
                             </td>
                         </tr>
                       <?php $i++; } ?>
@@ -54,8 +54,8 @@
                 </div>
               </div>
               <div class="text-right">
-                 <a href="<?php echo base_url('Store/createBrand'); ?>" class="btn btn-primary" type="button">Create Brand</a>
-                 <a href="<?php echo base_url('Store/'); ?>" class="btn btn-danger" type="button">Back</a>
+                 <a href="<?php echo base_url('Brand/createBrand'); ?>" class="btn btn-primary" type="button">Create Brand</a>
+                 <a href="<?php echo base_url('Brand/'); ?>" class="btn btn-danger" type="button">Back</a>
               </div>
                 </div>
               <div class="col-sm-1"></div>

@@ -21,7 +21,7 @@
 
                 <div class="col-md-1"></div>
                 <div class="col-sm-9">
-                <form action="<?php echo base_url('Store/updateBrand/').$row['brand_id'] ?>" method="post" class="form form-horizontal" >
+                <form action="<?php echo base_url('Brand/updateBrand/').$row['brand_id'] ?>" method="post" class="form form-horizontal" >
 
                     <div class="row">
                       <label for="name" class="col-sm-2">Brand Name:</label>
@@ -33,7 +33,7 @@
                       <div class="col-sm-4">
                         <div class="text-right">
                             <button class="btn btn-primary" type="submit">Update</button>
-                            <a href="<?php echo base_url('Store/viewBrand'); ?>" class="btn btn-danger" type="button">Cancel</a>
+                            <a href="<?php echo base_url('Brand/viewBrand'); ?>" class="btn btn-danger" type="button">Cancel</a>
                         </div>
                      </div>
                     </div>

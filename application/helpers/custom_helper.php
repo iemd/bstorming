@@ -29,6 +29,28 @@ if ( ! function_exists('emp_navactive'))
         }
     }
 }
+if ( ! function_exists('store_navactive'))
+{
+    function store_navactive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array(
+
+          "Brand/",
+          "Brand/viewBrand",
+          "Brand/createBrand",
+          "Brand/editBrand"
+
+        );
+        if(in_array($uristring,$auri)){
+          $class_a = "active open";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}
+
 if ( ! function_exists('emp_asmactive'))
 {
     function emp_asmactive($uristring = '')
@@ -63,6 +85,20 @@ if ( ! function_exists('emp_nhactive'))
     {
         $class_a = '';
         $auri = array("Employee/manageNhProfile","Nh/createNh","Nh/viewNh","Nh/editNh");
+        if(in_array($uristring,$auri)){
+          $class_a = "active";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}
+if ( ! function_exists('store_brandactive'))
+{
+    function store_brandactive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array("Brand/viewBrand","Brand/createBrand","Brand/editBrand");
         if(in_array($uristring,$auri)){
           $class_a = "active";
           return $class_a;

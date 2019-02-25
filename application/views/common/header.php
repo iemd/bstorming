@@ -200,14 +200,14 @@
                           <li class="<?php echo emp_nhactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>"><a href="<?php echo base_url('Employee/manageNhProfile'); ?>">Manage NH Profile</a></li>
                     </ul>
                   </li>
-                   <li class="sidenav-item has-subnav">
+                   <li class="sidenav-item has-subnav <?php echo store_navactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
                       <a href="#" title="Store Management" aria-haspopup="true">
                       <span class="sidenav-icon icon icon-columns"></span>
                       <span class="sidenav-label">Store Management</span>
                     </a>
                       <ul class="sidenav-subnav collapse">
 
-                          <li><a href="<?php echo base_url('Store'); ?>">Brand Management</a></li>
+                          <li class="<?php echo store_brandactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>"><a href="<?php echo base_url('Brand'); ?>">Brand Management</a></li>
                           <li><a href="store_management.php">Store ID & Password Management</a></li>
                           <li><a href="view_store.php">View Store Activity</a></li>
                       <li><a href="#">Complain Management</a></li>

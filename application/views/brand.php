@@ -18,7 +18,7 @@
                    <div class="row">
                        <div class="col-md-3">
 
-                                  <a type="button" href="<?php echo base_url('Store/viewBrand'); ?>" class="btn btn-primary">Manage Brand</a>
+                                  <a type="button" href="<?php echo base_url('Brand/viewBrand'); ?>" class="btn btn-primary">Manage Brand</a>
 
                        </div>
                         <div class="col-md-3">
