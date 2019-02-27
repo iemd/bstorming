@@ -77,5 +77,26 @@ class Store extends CI_Controller {
 				 redirect(base_url('Store/viewStore'), 'refresh', $message);
 			 }
 		 }
+		 public function selectBrand($store_id = null)
+			{
+			  $this->load->model('StoreModel');
+			  $data['brandlist'] = $this->StoreModel->getBrand();
+				$data['storeid'] = $store_id;
+				$data['storebrand'] = $this->StoreModel->getBrandByStoreId($store_id);
+				$this->load->view('common/header');
+				$this->load->view('addbrand',$data);
+			}
+			public function addBrand(){
+				$this->load->model('StoreModel');
+				$store_id = $this->input->post('storeid');
+				$brand_ids = $this->input->post('brand');
+				//print_r($this->input->post());die;
+				$added = $this->StoreModel->addRemoveBrand($brand_ids, $store_id);
+				if($added)
+				{
+					$message = $this->session->set_flashdata('message', 'Brand successfully added!');
+					redirect(base_url('Store/viewStore/'), 'refresh', $message);
 
+				}
+			}
   }

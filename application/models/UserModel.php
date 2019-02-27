@@ -100,7 +100,7 @@ class UserModel extends CI_Model
        $this->db->from('bs_user u');
        $this->db->join('bs_user_role ur', 'ur.role_id = u.role_id');
        $query = $this->db->get();
-       $this->db->last_query();
+       //$this->db->last_query();
        $result = $query->result_array();
        return $result;
     }
