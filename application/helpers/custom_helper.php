@@ -43,7 +43,8 @@ if ( ! function_exists('store_navactive'))
           "Brand/editBrand",
           "Store/viewStore",
           "Store/createStore",
-          "Store/editStore"
+          "Store/editStore",
+          "Store/selectBrand"
 
         );
         if(in_array($uristring,$auri)){
@@ -102,7 +103,21 @@ if ( ! function_exists('store_brandactive'))
     function store_brandactive($uristring = '')
     {
         $class_a = '';
-        $auri = array("Brand/viewBrand","Brand/createBrand","Brand/editBrand");
+        $auri = array("Brand/viewBrand","Brand/createBrand","Brand/editBrand","Store/selectBrand");
+        if(in_array($uristring,$auri)){
+          $class_a = "active";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}
+if ( ! function_exists('store_storeidactive'))
+{
+    function store_storeidactive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array("Store/viewStore","Store/createStore","Store/editStore");
         if(in_array($uristring,$auri)){
           $class_a = "active";
           return $class_a;
