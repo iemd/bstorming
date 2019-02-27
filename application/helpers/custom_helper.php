@@ -126,3 +126,17 @@ if ( ! function_exists('store_storeidactive'))
         }
     }
 }
+if ( ! function_exists('store_storeidactive'))
+{
+    function store_storeidactive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array("Store/viewStore","Store/createStore","Store/editStore");
+        if(in_array($uristring,$auri)){
+          $class_a = "active";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}
