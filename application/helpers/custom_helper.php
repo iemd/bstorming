@@ -19,7 +19,8 @@ if ( ! function_exists('emp_navactive'))
           "Nh/createNh",
           "Nh/viewNh",
           "Nh/editNh",
-          "Asm/selectStore"
+          "Asm/selectStore",
+          "Zm/selectAsm"
 
         );
         if(in_array($uristring,$auri)){
@@ -76,7 +77,7 @@ if ( ! function_exists('emp_zmactive'))
     function emp_zmactive($uristring = '')
     {
         $class_a = '';
-        $auri = array("Employee/manageZmProfile","Zm/createZm","Zm/viewZm","Zm/editZm");
+        $auri = array("Employee/manageZmProfile","Zm/createZm","Zm/viewZm","Zm/editZm","Zm/selectAsm");
         if(in_array($uristring,$auri)){
           $class_a = "active";
           return $class_a;

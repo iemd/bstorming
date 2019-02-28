@@ -2,12 +2,13 @@
         <!-- Header-->
  <?php $Loginid = $this->session->userdata('ID');?>
  <?php if (!empty($Loginid)){ ?>
+   <?php foreach($storedetail as $store){} ?>
    <div class="layout-content">
         <div class="layout-content-body">
           <div class="title-bar">
 
             <h1 class="title-bar-title">
-                <span class="d-ib">SELECT STORE BRANDS</span>
+                <span class="d-ib">ADD BRANDS [<?php echo $store['StoreID']; ?>]</span>
 
             </h1>
 
@@ -68,7 +69,7 @@
                 </div>
               </div>
               <div class="text-right">
-                <input type="hidden" name="storeid" value="<?php echo $storeid; ?>" />
+                <input type="hidden" name="storeid" value="<?php echo $store['store_id']; ?>" />
                  <button class="btn btn-primary" type="submit">Submit</button>
                  <a href="<?php echo base_url('Store/viewStore'); ?>" class="btn btn-danger" type="button">Back</a>
               </div>

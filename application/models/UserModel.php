@@ -121,5 +121,37 @@ class UserModel extends CI_Model
           return false;
           }
       }
+      public function getAsmByZmId($zm_id)
+      {
+         $this->db->select('*');
+         $this->db->where('za.zm_id',$zm_id);
+         $this->db->from('bs_zm_asm za');
+         $this->db->join('bs_user u', 'za.zm_id = u.user_id');
+         $query = $this->db->get();
+         //echo $this->db->last_query();die;
+         $result = $query->result_array();
+         return $result;
+      }
+      public function assignasm($asm_ids = null, $zm_id=null)
+      {
+         if(empty($asm_ids)){
+           $whereArray = array("zm_id"=>$zm_id);
+           $query = $this->db->delete('bs_zm_asm',$whereArray);
+           if ($query) {
+             return true;
+           } else {
+             return false;
+             }
+         }else{
+           $whereArray = array("zm_id"=>$zm_id);
+           $query = $this->db->delete('bs_zm_asm',$whereArray);
+           foreach($asm_ids as $asm_id){
+             $data['asm_id'] = $asm_id;
+             $data['zm_id'] = $zm_id;
+             $assigned = $this->db->insert('bs_zm_asm',$data);
+          }
+        }
+           return $assigned;
+      }
 }
 ?>

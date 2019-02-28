@@ -72,4 +72,26 @@ class Zm extends CI_Controller {
 				redirect(base_url('Zm/viewZm'), 'refresh', $message);
 			}
 		}
+		public function selectAsm($zm_id = null)
+		 {
+			 $this->load->model('UserModel');
+			 $data['asmlist'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(ASM));
+			 $data['zmasmlist'] = $this->UserModel->getAsmByZmId($zm_id);
+			 $data['zmdetail'] = $this->UserModel->getUser($zm_id);
+			 $this->load->view('common/header');
+			 $this->load->view('assignasmzm',$data);
+		 }
+		 public function assignAsm(){
+			 $this->load->model('UserModel');
+			 $zm_id = $this->input->post('zmid');
+			 $asm_ids = $this->input->post('asm');
+			 //print_r($this->input->post());die;
+			 $assigned = $this->UserModel->assignasm($asm_ids, $zm_id);
+			 if($assigned)
+			 {
+				 $message = $this->session->set_flashdata('message', 'ASM successfully assigned!');
+				 redirect(base_url('Zm/viewZm/'), 'refresh', $message);
+
+			 }
+		 }
 }

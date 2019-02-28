@@ -81,7 +81,7 @@ class Store extends CI_Controller {
 			{
 			  $this->load->model('StoreModel');
 			  $data['brandlist'] = $this->StoreModel->getBrand();
-				$data['storeid'] = $store_id;
+				$data['storedetail'] = $this->StoreModel->getStore($store_id);
 				$data['storebrand'] = $this->StoreModel->getBrandByStoreId($store_id);
 				$this->load->view('common/header');
 				$this->load->view('addbrand',$data);

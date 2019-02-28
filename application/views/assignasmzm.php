@@ -2,17 +2,19 @@
         <!-- Header-->
  <?php $Loginid = $this->session->userdata('ID');?>
  <?php if (!empty($Loginid)){ ?>
+   <?php foreach($zmdetail as $zm){} ?>
    <div class="layout-content">
         <div class="layout-content-body">
           <div class="title-bar">
 
             <h1 class="title-bar-title">
-                <span class="d-ib">ZM LIST</span>
+                <span class="d-ib">ASSIGN ASM [<?php echo $zm['ID']; ?>]</span>
 
             </h1>
 
           </div>
             <div class="row gutter-xs" style="margin-top: 30px">
+              <form action="<?php echo base_url('Zm/assignAsm/'); ?>" method="post" class="form form-horizontal" >
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10">
                      <div class="card">
@@ -35,37 +37,60 @@
                           <th>Name</th>
                           <th>Mobile No.</th>
                           <th>View Report</th>
-                          <th>ASM</th>
-                          <th>Action</th>
+                          <th>Store</th>
+                          <th>Select ASM</th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php $i=1; ?>
-                        <?php foreach($zmlist as $zm) { ?>
+                        <?php $count = count($asmlist); ?>
+                        <?php if($count>0){ ?>
+                        <?php
+                            $checked =0;
+                            foreach($asmlist as $asm) {
+                              foreach($zmasmlist as $row) {
+                                if($asm['user_id'] == $row['asm_id']){
+                                    $checked =1;
+                                }
+                              }
+
+
+                          ?>
                         <tr>
-                            <td><?php echo $i; ?></td>
-                             <td><?php echo $zm['ID']; ?></td>
-                             <td><?php echo $zm['doj']; ?></td>
-                             <td><?php echo $zm['name']; ?></td>
-                             <td><?php echo $zm['mobile']; ?></td>
-                             <td><a href="<?php //echo base_url('NewMeeting/editMeeting/').$row['meet_id']; ?>"><i class="fa fa-eye" style="font-size:18px;color:#0288d1"></i></a></td>
-                             <td><a href="<?php echo base_url('Zm/selectAsm/').$zm['user_id']; ?>" class="btn btn-primary btn-xs" type="button">Assign ASM</a></td>
+                           <td><?php echo $i; ?></td>
+                           <td><?php echo $asm['ID']; ?></td>
+                           <td><?php echo $asm['doj']; ?></td>
+                           <td><?php echo $asm['name']; ?></td>
+                           <td><?php echo $asm['mobile']; ?></td>
+                           <td><a href="<?php //echo base_url('NewMeeting/editMeeting/').$row['meet_id']; ?>"><i class="fa fa-eye" style="font-size:18px;color:#0288d1"></i></a></td>
+                           <td><a href="<?php echo base_url('Asm/selectStore/').$asm['user_id']; ?>" class="btn btn-primary btn-xs" type="button">Allocate Store</a></td>
                              <td>
-                               <a href="<?php echo base_url('Zm/editZm/').$zm['user_id']; ?>"><i class="fa fa-edit" style="font-size:18px;color:green"></i></a>&nbsp;&nbsp;
-                               <a href="<?php echo base_url('Zm/deleteZm/').$zm['user_id']; ?>" onclick="return confirm('Are you sure?')"><i class="fa fa-trash" style="font-size:18px;color:red"></i></a></td>
+
+                                <input type="checkbox" name="asm[]" value="<?php echo $asm['user_id']; ?>" <?php if($checked){echo "checked";} ?> style="width:20px;height:20px;">
+
+                              </div>
                             </td>
                         </tr>
-                      <?php $i++; } ?>
+                        <?php $i++; $checked =0;} }else{ ?>
+                          <tr>
+                            <td>
+                                <a href="<?php echo base_url('Asm/createAsm'); ?>" class="btn btn-primary" type="button">Create Asm</a>
+                             </td>
+                          </tr>
+                        <?php } ?>
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
               <div class="text-right">
-                 <a href="<?php echo base_url('Employee/manageZmProfile'); ?>" class="btn btn-danger" type="button">Back</a>
+                 <input type="hidden" name="zmid" value="<?php echo $zm['user_id']; ?>">
+                 <button class="btn btn-primary" type="submit">Submit</button>
+                 <a href="<?php echo base_url('Zm/viewZm'); ?>" class="btn btn-danger" type="button">Back</a>
               </div>
                 </div>
               <div class="col-sm-1"></div>
+             </form>
             </div>
         </div>
 </div>
