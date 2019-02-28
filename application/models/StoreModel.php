@@ -76,5 +76,37 @@ class StoreModel extends CI_Model
          }
             return $added;
        }
+       public function allocatestore($store_ids = null, $asm_id=null)
+       {
+          if(empty($store_ids)){
+            $whereArray = array("asm_id"=>$asm_id);
+            $query = $this->db->delete('bs_asm_store',$whereArray);
+            if ($query) {
+              return true;
+            } else {
+              return false;
+              }
+          }else{
+            $whereArray = array("asm_id"=>$asm_id);
+            $query = $this->db->delete('bs_asm_store',$whereArray);
+            foreach($store_ids as $store_id){
+              $data['store_id'] = $store_id;
+              $data['asm_id'] = $asm_id;
+              $allocated = $this->db->insert('bs_asm_store',$data);
+           }
+         }
+            return $allocated;
+       }
+       public function getStoreByAsmId($asm_id)
+       {
+          $this->db->select('*');
+          $this->db->where('as.asm_id',$asm_id);
+          $this->db->from('bs_asm_store as');
+          $this->db->join('bs_store s', 'as.store_id = s.store_id');
+          $query = $this->db->get();
+          //echo $this->db->last_query();die;
+          $result = $query->result_array();
+          return $result;
+       }
 }
 ?>

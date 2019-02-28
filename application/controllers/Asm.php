@@ -72,4 +72,27 @@ class Asm extends CI_Controller {
 				redirect(base_url('Asm/viewAsm'), 'refresh', $message);
 			}
 		}
+		public function selectStore($asm_id = null)
+		 {
+			 $this->load->model('StoreModel');
+			 $this->load->model('UserModel');
+			 $data['storelist'] = $this->StoreModel->getStore();
+			 $data['asmstorelist'] = $this->StoreModel->getStoreByAsmId($asm_id);
+			 $data['asmdetail'] = $this->UserModel->getUser($asm_id);
+			 $this->load->view('common/header');
+			 $this->load->view('allocatestoreasm',$data);
+		 }
+		 public function allocateStore(){
+			 $this->load->model('StoreModel');
+			 $asm_id = $this->input->post('asmid');
+			 $store_ids = $this->input->post('store');
+			 //print_r($this->input->post());die;
+			 $allocated = $this->StoreModel->allocatestore($store_ids, $asm_id);
+			 if($allocated)
+			 {
+				 $message = $this->session->set_flashdata('message', 'Store successfully allocated!');
+				 redirect(base_url('Asm/viewAsm/'), 'refresh', $message);
+
+			 }
+		 }
 }

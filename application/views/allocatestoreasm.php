@@ -2,17 +2,19 @@
         <!-- Header-->
  <?php $Loginid = $this->session->userdata('ID');?>
  <?php if (!empty($Loginid)){ ?>
+   <?php foreach($asmdetail as $asm){} ?>
    <div class="layout-content">
         <div class="layout-content-body">
           <div class="title-bar">
 
             <h1 class="title-bar-title">
-                <span class="d-ib">ZM LIST</span>
+                <span class="d-ib">ALLOCATE STORE [<?php echo $asm['ID']; ?>]</span>
 
             </h1>
 
           </div>
             <div class="row gutter-xs" style="margin-top: 30px">
+              <form action="<?php echo base_url('Asm/allocateStore/'); ?>" method="post" class="form form-horizontal" >
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10">
                      <div class="card">
@@ -30,42 +32,71 @@
                       <thead>
                         <tr>
                           <th>Sl. No.</th>
-                          <th>Emp.ID</th>
-                          <th>DOJ</th>
-                          <th>Name</th>
+                          <th>Store ID</th>
+                          <th>Store Name</th>
+                          <th>Address</th>
+                          <!--<th>City</th>-->
+                          <!--<th>Pincode</th>-->
+                          <th>Manager Name</th>
                           <th>Mobile No.</th>
-                          <th>View Report</th>
-                          <th>ASM</th>
-                          <th>Action</th>
+                          <th>Date</th>
+                          <th>Brand</th>
+                          <th>Select Store</th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php $i=1; ?>
-                        <?php foreach($zmlist as $zm) { ?>
+                        <?php $count = count($storelist); ?>
+                        <?php if($count>0){ ?>
+                        <?php
+                            $checked =0;
+                            foreach($storelist as $store) {
+                              foreach($asmstorelist as $row) {
+                                if($store['store_id'] == $row['store_id']){
+                                    $checked =1;
+                                }
+                              }
+
+
+                          ?>
                         <tr>
                             <td><?php echo $i; ?></td>
-                             <td><?php echo $zm['ID']; ?></td>
-                             <td><?php echo $zm['doj']; ?></td>
-                             <td><?php echo $zm['name']; ?></td>
-                             <td><?php echo $zm['mobile']; ?></td>
-                             <td><a href="<?php //echo base_url('NewMeeting/editMeeting/').$row['meet_id']; ?>"><i class="fa fa-eye" style="font-size:18px;color:#0288d1"></i></a></td>
-                             <td><a href="<?php //echo base_url('Store/selectBrand/').$store['store_id']; ?>" class="btn btn-primary btn-xs" type="button">Assign ASM</a></td>
+                             <td><?php echo $store['StoreID']; ?></td>
+                             <td><?php echo $store['store_name']; ?></td>
+                             <td><?php echo $store['address']; ?></td>
+                             <!--<td><?php //echo $store['city']; ?></td>
+                             <td><?php //echo $store['pincode']; ?></td>-->
+                             <td><?php echo $store['manager_name']; ?></td>
+                             <td><?php echo $store['mobileno']; ?></td>
+                            <td><?php echo $store['created_at']; ?></td>
+                             <td><a href="<?php echo base_url('Store/selectBrand/').$store['store_id']; ?>" class="btn btn-primary btn-xs" type="button">Add Brand</a></td>
                              <td>
-                               <a href="<?php echo base_url('Zm/editZm/').$zm['user_id']; ?>"><i class="fa fa-edit" style="font-size:18px;color:green"></i></a>&nbsp;&nbsp;
-                               <a href="<?php echo base_url('Zm/deleteZm/').$zm['user_id']; ?>" onclick="return confirm('Are you sure?')"><i class="fa fa-trash" style="font-size:18px;color:red"></i></a></td>
+
+                                <input type="checkbox" name="store[]" value="<?php echo $store['store_id']; ?>" <?php if($checked){echo "checked";} ?> style="width:20px;height:20px;">
+
+                              </div>
                             </td>
                         </tr>
-                      <?php $i++; } ?>
+                        <?php $i++; $checked =0;} }else{ ?>
+                          <tr>
+                            <td>
+                                <a href="<?php echo base_url('Store/createStore'); ?>" class="btn btn-primary" type="button">Create Store</a>
+                             </td>
+                          </tr>
+                        <?php } ?>
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
               <div class="text-right">
-                 <a href="<?php echo base_url('Employee/manageZmProfile'); ?>" class="btn btn-danger" type="button">Back</a>
+                 <input type="hidden" name="asmid" value="<?php echo $asm['user_id']; ?>">
+                 <button class="btn btn-primary" type="submit">Submit</button>
+                 <a href="<?php echo base_url('Asm/viewAsm'); ?>" class="btn btn-danger" type="button">Back</a>
               </div>
                 </div>
               <div class="col-sm-1"></div>
+             </form>
             </div>
         </div>
 </div>
