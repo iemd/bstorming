@@ -40,7 +40,7 @@
                           <th>Manager Name</th>
                           <th>Mobile No.</th>
                           <th>Date</th>
-                          <th>Brand</th>
+                          <!--<th>Brand</th>-->
                           <th>Select Store</th>
                         </tr>
                       </thead>
@@ -69,8 +69,8 @@
                              <td><?php echo $store['manager_name']; ?></td>
                              <td><?php echo $store['mobileno']; ?></td>
                             <td><?php echo $store['created_at']; ?></td>
-                             <td><a href="<?php echo base_url('Store/selectBrand/').$store['store_id']; ?>" class="btn btn-primary btn-xs" type="button">Add Brand</a></td>
-                             <td>
+                             <!--<td><a href="<?php //echo base_url('Store/selectBrand/').$store['store_id']; ?>" class="btn btn-primary btn-xs" type="button">Add Brand</a></td>-->
+                             <td style="<?php if($checked){echo "background:#0288d1";} ?>">
 
                                 <input type="checkbox" name="store[]" value="<?php echo $store['store_id']; ?>" <?php if($checked){echo "checked";} ?> style="width:20px;height:20px;">
 

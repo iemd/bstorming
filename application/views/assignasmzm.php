@@ -37,7 +37,7 @@
                           <th>Name</th>
                           <th>Mobile No.</th>
                           <th>View Report</th>
-                          <th>Store</th>
+                          <!--<th>Store</th>-->
                           <th>Select ASM</th>
                         </tr>
                       </thead>
@@ -63,8 +63,8 @@
                            <td><?php echo $asm['name']; ?></td>
                            <td><?php echo $asm['mobile']; ?></td>
                            <td><a href="<?php //echo base_url('NewMeeting/editMeeting/').$row['meet_id']; ?>"><i class="fa fa-eye" style="font-size:18px;color:#0288d1"></i></a></td>
-                           <td><a href="<?php echo base_url('Asm/selectStore/').$asm['user_id']; ?>" class="btn btn-primary btn-xs" type="button">Allocate Store</a></td>
-                             <td>
+                           <!--<td><a href="<?php //echo base_url('Asm/selectStore/').$asm['user_id']; ?>" class="btn btn-primary btn-xs" type="button">Allocate Store</a></td>-->
+                             <td style="<?php if($checked){echo "background:#0288d1";} ?>">
 
                                 <input type="checkbox" name="asm[]" value="<?php echo $asm['user_id']; ?>" <?php if($checked){echo "checked";} ?> style="width:20px;height:20px;">
 

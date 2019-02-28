@@ -16,6 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `bs_asm_store`
+--
+
+DROP TABLE IF EXISTS `bs_asm_store`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bs_asm_store` (
+  `as_id` int(11) NOT NULL AUTO_INCREMENT,
+  `asm_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `allocated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`as_id`),
+  KEY `fk_asm_id` (`asm_id`),
+  KEY `fk_asm_store_id` (`store_id`),
+  CONSTRAINT `fk_asm_id` FOREIGN KEY (`asm_id`) REFERENCES `bs_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_asm_store_id` FOREIGN KEY (`store_id`) REFERENCES `bs_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bs_asm_store`
+--
+
+LOCK TABLES `bs_asm_store` WRITE;
+/*!40000 ALTER TABLE `bs_asm_store` DISABLE KEYS */;
+INSERT INTO `bs_asm_store` VALUES (17,5,2,'2019-02-28 10:09:29'),(18,5,3,'2019-02-28 10:09:29'),(19,3,2,'2019-02-28 11:44:05'),(20,3,3,'2019-02-28 11:44:05');
+/*!40000 ALTER TABLE `bs_asm_store` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `bs_brand`
 --
 
@@ -91,7 +121,7 @@ CREATE TABLE `bs_store_brand` (
   KEY `fk_brand_id` (`brand_id`),
   CONSTRAINT `fk_brand_id` FOREIGN KEY (`brand_id`) REFERENCES `bs_brand` (`brand_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_store_idd` FOREIGN KEY (`store_id`) REFERENCES `bs_store` (`store_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +130,7 @@ CREATE TABLE `bs_store_brand` (
 
 LOCK TABLES `bs_store_brand` WRITE;
 /*!40000 ALTER TABLE `bs_store_brand` DISABLE KEYS */;
-INSERT INTO `bs_store_brand` VALUES (1,7,1,'2019-02-27 09:39:09'),(2,7,2,'2019-02-27 09:39:09'),(3,7,3,'2019-02-27 09:39:09'),(7,6,2,'2019-02-27 10:00:40'),(8,6,3,'2019-02-27 10:00:40'),(9,6,4,'2019-02-27 10:00:40'),(10,6,5,'2019-02-27 10:00:40'),(16,3,1,'2019-02-27 10:16:44'),(17,3,2,'2019-02-27 10:16:45'),(18,3,3,'2019-02-27 10:16:45'),(19,2,1,'2019-02-27 10:16:51'),(20,2,2,'2019-02-27 10:16:51'),(21,2,3,'2019-02-27 10:16:51'),(28,8,1,'2019-02-27 10:19:02'),(29,8,2,'2019-02-27 10:19:02'),(30,8,3,'2019-02-27 10:19:02'),(31,8,4,'2019-02-27 10:19:02'),(32,8,5,'2019-02-27 10:19:02'),(33,8,6,'2019-02-27 10:19:03'),(34,8,7,'2019-02-27 10:19:03'),(39,5,3,'2019-02-27 10:30:31'),(40,5,4,'2019-02-27 10:30:31'),(41,5,5,'2019-02-27 10:30:31'),(42,5,6,'2019-02-27 10:30:31'),(43,5,7,'2019-02-27 10:30:31'),(44,4,1,'2019-02-27 10:33:30'),(45,4,2,'2019-02-27 10:33:30'),(46,4,3,'2019-02-27 10:33:30'),(47,4,4,'2019-02-27 10:33:30'),(48,4,5,'2019-02-27 10:33:30'),(49,4,6,'2019-02-27 10:33:30'),(50,4,7,'2019-02-27 10:33:30'),(58,9,2,'2019-02-27 10:49:34'),(59,9,3,'2019-02-27 10:49:35'),(60,9,4,'2019-02-27 10:49:35'),(61,9,5,'2019-02-27 10:49:35'),(62,9,17,'2019-02-27 10:49:35'),(63,9,18,'2019-02-27 10:49:35'),(64,9,19,'2019-02-27 10:49:35');
+INSERT INTO `bs_store_brand` VALUES (1,7,1,'2019-02-27 09:39:09'),(2,7,2,'2019-02-27 09:39:09'),(3,7,3,'2019-02-27 09:39:09'),(7,6,2,'2019-02-27 10:00:40'),(8,6,3,'2019-02-27 10:00:40'),(9,6,4,'2019-02-27 10:00:40'),(10,6,5,'2019-02-27 10:00:40'),(16,3,1,'2019-02-27 10:16:44'),(17,3,2,'2019-02-27 10:16:45'),(18,3,3,'2019-02-27 10:16:45'),(28,8,1,'2019-02-27 10:19:02'),(29,8,2,'2019-02-27 10:19:02'),(30,8,3,'2019-02-27 10:19:02'),(31,8,4,'2019-02-27 10:19:02'),(32,8,5,'2019-02-27 10:19:02'),(33,8,6,'2019-02-27 10:19:03'),(34,8,7,'2019-02-27 10:19:03'),(44,4,1,'2019-02-27 10:33:30'),(45,4,2,'2019-02-27 10:33:30'),(46,4,3,'2019-02-27 10:33:30'),(47,4,4,'2019-02-27 10:33:30'),(48,4,5,'2019-02-27 10:33:30'),(49,4,6,'2019-02-27 10:33:30'),(50,4,7,'2019-02-27 10:33:30'),(58,9,2,'2019-02-27 10:49:34'),(59,9,3,'2019-02-27 10:49:35'),(60,9,4,'2019-02-27 10:49:35'),(61,9,5,'2019-02-27 10:49:35'),(62,9,17,'2019-02-27 10:49:35'),(63,9,18,'2019-02-27 10:49:35'),(64,9,19,'2019-02-27 10:49:35'),(74,2,1,'2019-02-28 07:33:15'),(75,2,2,'2019-02-28 07:33:15'),(76,2,3,'2019-02-28 07:33:15'),(77,2,5,'2019-02-28 07:33:15'),(78,2,6,'2019-02-28 07:33:15'),(79,5,2,'2019-02-28 10:08:46'),(80,5,3,'2019-02-28 10:08:47'),(81,5,5,'2019-02-28 10:08:47');
 /*!40000 ALTER TABLE `bs_store_brand` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,6 +223,36 @@ LOCK TABLES `bs_user_store` WRITE;
 /*!40000 ALTER TABLE `bs_user_store` DISABLE KEYS */;
 /*!40000 ALTER TABLE `bs_user_store` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `bs_zm_asm`
+--
+
+DROP TABLE IF EXISTS `bs_zm_asm`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bs_zm_asm` (
+  `za_is` int(11) NOT NULL AUTO_INCREMENT,
+  `zm_id` int(11) NOT NULL,
+  `asm_id` int(11) NOT NULL,
+  `assigned_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`za_is`),
+  KEY `fk_zm_id` (`zm_id`),
+  KEY `fk_zm_asm_id` (`asm_id`),
+  CONSTRAINT `fk_zm_asm_id` FOREIGN KEY (`asm_id`) REFERENCES `bs_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `fk_zm_id` FOREIGN KEY (`zm_id`) REFERENCES `bs_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bs_zm_asm`
+--
+
+LOCK TABLES `bs_zm_asm` WRITE;
+/*!40000 ALTER TABLE `bs_zm_asm` DISABLE KEYS */;
+INSERT INTO `bs_zm_asm` VALUES (11,10,3,'2019-02-28 11:10:32'),(12,10,5,'2019-02-28 11:10:32'),(15,8,16,'2019-02-28 11:28:12'),(16,8,17,'2019-02-28 11:28:12');
+/*!40000 ALTER TABLE `bs_zm_asm` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -203,4 +263,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-27 17:52:03
+-- Dump completed on 2019-02-28 17:37:25
