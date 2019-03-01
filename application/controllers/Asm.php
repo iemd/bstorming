@@ -95,4 +95,14 @@ class Asm extends CI_Controller {
 
 			 }
 		 }
+		 //------------------------ASM Panel------------------------------------
+		 public function rateStore()
+		 {
+			   $this->load->model('StoreModel');
+			   $asm_id = $this->session->userdata['ID'];
+				 $role = $this->session->userdata['role'];
+				 $data['asmstorelist'] = $this->StoreModel->getStoreByAsmId($asm_id);
+				 $this->load->view('common/header');
+				 $this->load->view('asmratestore', $data);
+		 }
 }

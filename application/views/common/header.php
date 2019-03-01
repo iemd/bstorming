@@ -508,7 +508,7 @@
               </li>
 
               <li class="sidenav-item has-subnav">
-                  <a href="rate_store.php" title="Top 20 Ranking of stores">
+                  <a href="<?php echo base_url('Asm/rateStore'); ?>" title="Top 20 Ranking of stores">
                   <span class="sidenav-icon icon icon-columns"></span>
                   <span class="sidenav-label">Rate Store</span>
                 </a>
