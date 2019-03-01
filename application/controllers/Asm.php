@@ -105,4 +105,13 @@ class Asm extends CI_Controller {
 				 $this->load->view('common/header');
 				 $this->load->view('asmratestore', $data);
 		 }
+		 public function Profile()
+		 {
+				 $this->load->model('UserModel');
+				 $asm_id = $this->session->userdata['ID'];
+				 $role = $this->session->userdata['role'];
+				 $data['profileasm'] = $this->UserModel->getUser($asm_id);
+				 $this->load->view('common/header');
+				 $this->load->view('profileasm', $data);
+		 }
 }

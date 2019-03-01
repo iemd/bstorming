@@ -23,7 +23,7 @@
                 <div class="card-body">
                     <h3 align="center">Rate Store</h3>
                   <div class="table-flip-scroll">
-                    <table class="table table-striped">
+                    <table id="bootstrap-data-table" class="table table-striped">
                       <thead>
                         <tr>
                           <th>Sl. No.</th>
@@ -80,6 +80,15 @@
    <script src="<?php echo base_url('assets/js/application.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/demo.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/compose.min.js');?>"></script>
+  <script>
+   $(document).ready(function() {
+    $('#bootstrap-data-table').DataTable( {
+        scrollY:        '50vh',
+        scrollCollapse: true,
+        paging:         false
+    } );
+   } );
+ </script>
    <!--<script>
      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

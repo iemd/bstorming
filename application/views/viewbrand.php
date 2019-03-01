@@ -79,7 +79,15 @@
    <script src="<?php echo base_url('assets/js/application.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/demo.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/compose.min.js');?>"></script>
-
+   <!--<script>
+   $(document).ready(function() {
+    $('#bootstrap-data-table').DataTable( {
+        //"paging":   false,
+        //"ordering": false,
+        //"info":     false
+    } );
+   } );
+ </script>-->
    <!--<script>
      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

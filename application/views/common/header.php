@@ -529,7 +529,7 @@
               </li>
 
               <li class="sidenav-item has-subnav">
-                  <a href="profile.php" title="Bottom 20 Ranking of Stores">
+                  <a href="<?php echo base_url('Asm/Profile'); ?>" title="Bottom 20 Ranking of Stores">
                   <span class="sidenav-icon icon icon-columns"></span>
                   <span class="sidenav-label">Profile Setting</span>
                 </a>
