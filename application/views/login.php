@@ -21,14 +21,14 @@
     <div class="login">
       <div class="login-body">
         <a class="login-brand" href="index.php">
-          <!---<img class="img-responsive" src="img/logo.svg" alt="Elephant">-->
+          <!---<img class="img-responsive" src="<?php //echo base_url('assets/images/logo.svg'); ?>" alt="Elephant">-->
             <h2 align="center">Brain Storming</h2>
         </a>
         <h3 class="login-heading">Sign in</h3>
         <div class="login-form">
              <?php //if(isset($_SESSION["errormsg"])) {echo $_SESSION["errormsg"]; }?>
             <form data-toggle="md-validator" action="<?php echo base_url(); ?>AdminPanel/adminloginAction" method="post">
-		 <div class="md-form-group">
+		              <!--<div class="md-form-group">
                      <select class="md-form-control" name="role">
                          <option value="">Select Role</option>
                          <option value="ASM">ASM</option>
@@ -38,7 +38,7 @@
 
                      </select>
                      <label class="md-control-label"></label>
-                 </div>
+                 </div>-->
             <div class="md-form-group md-label-floating">
                  <?php echo $this->session->flashdata('message'); ?>
             </div>

@@ -190,7 +190,7 @@
 
                  <li class="sidenav-item has-subnav <?php echo emp_navactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
                       <a href="#" title="Employee Management" aria-haspopup="true">
-                      <span class="sidenav-icon icon icon-users"></span>
+                      <span class="sidenav-icon icon icon-building"></span>
                       <span class="sidenav-label">Employee Management</span>
                     </a>
                       <ul class="sidenav-subnav collapse">
