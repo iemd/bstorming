@@ -7,7 +7,7 @@
           <div class="title-bar">
 
             <h1 class="title-bar-title">
-                <span class="d-ib">RATE STORE</span>
+                <span class="d-ib">ASM LIST</span>
 
             </h1>
 
@@ -17,52 +17,59 @@
                 <div class="col-sm-10">
                      <div class="card">
                 <div class="card-header">
-
-
+                <!--<h3 align="center">Rate Store</h3>-->
+                <div class="text-left">
+                   <h5><span class="label label-outline-success"><?php echo $this->session->flashdata('message'); ?></span></h5>
+                   <h5><span class="label label-outline-danger"><?php echo $this->session->flashdata('error'); ?></span></h5>
+                 </div>
                 </div>
                 <div class="card-body">
-                    <!--<h3 align="center">Rate Store</h3>-->
-                  <div class="table-flip-scroll">
-                    <table id="bootstrap-data-table" class="table table-striped">
+                <!--<h3 align="center">&nbsp;</h3>-->
+                  <div class="table-responsive">
+                    <table id="bootstrap-data-table" class="table table-striped table-bordered">
                       <thead>
                         <tr>
                           <th>Sl. No.</th>
-                          <th>Date Time</th>
-                          <th>Store ID</th>
+                          <th>Emp.ID</th>
+                          <th>DOJ</th>
+                          <th>Name</th>
+                          <th>Mobile No.</th>
                           <th>View Report</th>
-                          <th>Remark</th>
+                          <th>Store</th>
+                          <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php $i=1; ?>
-                        <?php $count = count($asmstorelist); ?>
-                        <?php if($count>0){ ?>
-                          <?php foreach($asmstorelist as $row) { ?>
+                        <?php foreach($zmasmlist as $asm) { ?>
                         <tr>
                             <td><?php echo $i; ?></td>
-                             <td><?php echo $row['created_at']; ?></td>
-                             <td><?php echo $row['StoreID']; ?></td>
-                             <td><i class="fa fa-eye fa-2x"></i></td>
-                             <td>---</td>
-                        </tr>
-                        <?php $i++; } }else{ ?>
-                          <tr>
-                            <td>
-                                No Store Found!
-                             </td>
-                          </tr>
-                        <?php } ?>
+                             <td><?php echo $asm['ID']; ?></td>
+                             <td><?php echo $asm['doj']; ?></td>
+                             <td><?php echo $asm['name']; ?></td>
+                             <td><?php echo $asm['mobile']; ?></td>
+                             <td><a href="<?php //echo base_url('NewMeeting/editMeeting/').$row['meet_id']; ?>"><i class="fa fa-eye" style="font-size:18px;color:#0288d1"></i></a></td>
+                             <td><a href="<?php //echo base_url('Asm/selectStore/').$asm['user_id']; ?>" class="btn btn-primary btn-xs" type="button">Allocate Store</a></td>
+                             <td>
+                               <a href="<?php //echo base_url('Asm/editAsm/').$asm['user_id']; ?>"><i class="fa fa-edit" style="font-size:18px;color:green"></i></a>&nbsp;&nbsp;
+                               <a href="<?php //echo base_url('Asm/deleteAsm/').$asm['user_id']; ?>" onclick="return confirm('Are you sure?')"><i class="fa fa-trash" style="font-size:18px;color:red"></i></a></td>
+                            </td>
 
+                        </tr>
+                      <?php $i++; } ?>
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
+              <div class="text-right">
+                 <a href="<?php //echo base_url('Employee/manageAsmProfile'); ?>" class="btn btn-danger" type="button">Back</a>
+              </div>
                 </div>
-                    <div class="col-sm-1"></div>
+              <div class="col-sm-1"></div>
             </div>
         </div>
-     </div>
+</div>
 	<?php } else { ?>
 
    	    <?php redirect(base_url('AdminPanel')); ?>
@@ -80,16 +87,6 @@
    <script src="<?php echo base_url('assets/js/application.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/demo.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/compose.min.js');?>"></script>
-  <script>
-   $(document).ready(function() {
-    $('#bootstrap-data-table').DataTable( {
-        scrollY:        '50vh',
-        scrollCollapse: true,
-        paging:         false,
-        ordering: false
-    } );
-   } );
- </script>
    <!--<script>
      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

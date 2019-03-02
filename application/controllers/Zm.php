@@ -94,4 +94,33 @@ class Zm extends CI_Controller {
 
 			 }
 		 }
+		//------------------------ZM Panel------------------------------------
+		public function rateStore()
+		{
+				$this->load->model('StoreModel');
+				$zm_id = $this->session->userdata['ID'];
+				$role = $this->session->userdata['role'];
+				$data['zmstorelist'] = $this->StoreModel->getStoreByZmId($zm_id);
+				$this->load->view('common/header');
+				$this->load->view('zmratestore', $data);
+		}
+		public function Profile()
+		{
+				$this->load->model('UserModel');
+				$zm_id = $this->session->userdata['ID'];
+				$role = $this->session->userdata['role'];
+				$data['profilezm'] = $this->UserModel->getUser($zm_id);
+				$this->load->view('common/header');
+				$this->load->view('profilezm', $data);
+		}
+		public function asmList()
+		{
+				$this->load->model('StoreModel');
+				$zm_id = $this->session->userdata['ID'];
+				$role = $this->session->userdata['role'];
+				$data['zmasmlist'] = $this->StoreModel->getAsmByZmId($zm_id);
+				$this->load->view('common/header');
+				$this->load->view('zmasmlist', $data);
+		}
+
 }

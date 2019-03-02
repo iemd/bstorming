@@ -48,8 +48,8 @@ class StoreModel extends CI_Model
        {
           $this->db->select('*');
           $this->db->where('sb.store_id',$store_id);
-          $this->db->from('bs_store_brand sb');
-          $this->db->join('bs_brand b', 'sb.brand_id = b.brand_id');
+          $this->db->from('bs_store_brand as sb');
+          $this->db->join('bs_brand as b', 'sb.brand_id = b.brand_id');
           $query = $this->db->get();
           //echo $this->db->last_query();die;
           $result = $query->result_array();
@@ -101,8 +101,32 @@ class StoreModel extends CI_Model
        {
           $this->db->select('*');
           $this->db->where('as.asm_id',$asm_id);
-          $this->db->from('bs_asm_store as');
-          $this->db->join('bs_store s', 'as.store_id = s.store_id');
+          $this->db->from('bs_asm_store as as');
+          $this->db->join('bs_store as s', 'as.store_id = s.store_id');
+          $query = $this->db->get();
+          //echo $this->db->last_query();die;
+          $result = $query->result_array();
+          return $result;
+       }
+       public function getStoreByZmId($zm_id)
+       {
+          $this->db->select('s.*');
+          $this->db->where('za.zm_id',$zm_id);
+          $this->db->from('bs_zm_asm as za');
+          $this->db->join('bs_asm_store as as','za.asm_id = as.asm_id');
+          $this->db->join('bs_store as s', 'as.store_id = s.store_id');
+          $this->db->group_by('as.store_id');
+          $query = $this->db->get();
+          //echo $this->db->last_query();die;
+          $result = $query->result_array();
+          return $result;
+       }
+       public function getAsmByZmId($zm_id)
+       {
+          $this->db->select('u.*');
+          $this->db->where('za.zm_id',$zm_id);
+          $this->db->from('bs_zm_asm as za');
+          $this->db->join('bs_user as u','za.asm_id = u.user_id');
           $query = $this->db->get();
           //echo $this->db->last_query();die;
           $result = $query->result_array();

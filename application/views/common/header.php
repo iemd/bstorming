@@ -385,7 +385,7 @@
                </li>
                <li class="sidenav-heading">Brain Storming | <?php echo $Role; ?></li>
 
-               <li class="sidenav-item has-subnav active">
+               <li class="sidenav-item has-subnav <?php if($this->uri->uri_string()=="AdminPanel/Dasboard"){echo "active";}?>">
                    <a href="<?php echo base_url('AdminPanel/Dasboard'); ?>" aria-haspopup="true">
                    <span class="sidenav-icon icon icon-home"></span>
                    <span class="sidenav-label">Dashboards</span>
@@ -407,8 +407,8 @@
                  </a>
                </li>
 
-               <li class="sidenav-item has-subnav">
-                   <a href="rate_store.php" title="Top 20 Ranking of stores">
+               <li class="sidenav-item has-subnav <?php echo zm_ratestoreactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
+                   <a href="<?php echo base_url('Zm/rateStore'); ?>" title="Top 20 Ranking of stores">
                    <span class="sidenav-icon icon icon-columns"></span>
                    <span class="sidenav-label">Rate Store</span>
                  </a>
@@ -428,8 +428,8 @@
                  </a>
                </li>
 
-               <li class="sidenav-item has-subnav">
-                   <a href="profile.php" title="Bottom 20 Ranking of Stores">
+               <li class="sidenav-item has-subnav <?php echo zm_profileactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
+                   <a href="<?php echo base_url('Zm/Profile'); ?>" title="Bottom 20 Ranking of Stores">
                    <span class="sidenav-icon icon icon-columns"></span>
                    <span class="sidenav-label">Profile Setting</span>
                  </a>
@@ -442,8 +442,8 @@
                  </a>
                </li>
 
-               <li class="sidenav-item">
-                    <a href="#" title="ASM MANAGEMENT">
+               <li class="sidenav-item <?php echo zm_asmactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
+                    <a href="<?php echo base_url('Zm/asmList'); ?>" title="ASM MANAGEMENT">
                    <span class="sidenav-icon icon icon-columns"></span>
                    <span class="sidenav-label">ASM Management</span>
                  </a>
@@ -485,7 +485,7 @@
               </li>
               <li class="sidenav-heading">Brain Storming | <?php echo $Role; ?></li>
 
-              <li class="sidenav-item has-subnav active">
+              <li class="sidenav-item has-subnav <?php if($this->uri->uri_string()=="AdminPanel/Dasboard"){echo "active";}?>">
                   <a href="<?php echo base_url('AdminPanel/Dasboard'); ?>" aria-haspopup="true">
                   <span class="sidenav-icon icon icon-home"></span>
                   <span class="sidenav-label">Dashboards</span>
@@ -507,7 +507,7 @@
                 </a>
               </li>
 
-              <li class="sidenav-item has-subnav">
+              <li class="sidenav-item has-subnav <?php echo asm_ratestoreactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
                   <a href="<?php echo base_url('Asm/rateStore'); ?>" title="Top 20 Ranking of stores">
                   <span class="sidenav-icon icon icon-columns"></span>
                   <span class="sidenav-label">Rate Store</span>
@@ -528,7 +528,7 @@
                 </a>
               </li>
 
-              <li class="sidenav-item has-subnav">
+              <li class="sidenav-item has-subnav <?php echo asm_profileactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
                   <a href="<?php echo base_url('Asm/Profile'); ?>" title="Bottom 20 Ranking of Stores">
                   <span class="sidenav-icon icon icon-columns"></span>
                   <span class="sidenav-label">Profile Setting</span>

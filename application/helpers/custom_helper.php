@@ -142,3 +142,73 @@ if ( ! function_exists('store_storeidactive'))
         }
     }
 }
+if ( ! function_exists('asm_ratestoreactive'))
+{
+    function asm_ratestoreactive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array("Asm/rateStore");
+        if(in_array($uristring,$auri)){
+          $class_a = "active";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}
+if ( ! function_exists('asm_profileactive'))
+{
+    function asm_profileactive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array("Asm/Profile");
+        if(in_array($uristring,$auri)){
+          $class_a = "active";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}
+if ( ! function_exists('zm_ratestoreactive'))
+{
+    function zm_ratestoreactive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array("Zm/rateStore");
+        if(in_array($uristring,$auri)){
+          $class_a = "active";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}
+if ( ! function_exists('zm_profileactive'))
+{
+    function zm_profileactive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array("Zm/Profile");
+        if(in_array($uristring,$auri)){
+          $class_a = "active";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}
+if ( ! function_exists('zm_asmactive'))
+{
+    function zm_asmactive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array("Zm/asmList");
+        if(in_array($uristring,$auri)){
+          $class_a = "active";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}

@@ -35,9 +35,9 @@
                       </thead>
                       <tbody>
                         <?php $i=1; ?>
-                        <?php $count = count($asmstorelist); ?>
+                        <?php $count = count($zmstorelist); ?>
                         <?php if($count>0){ ?>
-                          <?php foreach($asmstorelist as $row) { ?>
+                          <?php foreach($zmstorelist as $row) { ?>
                         <tr>
                             <td><?php echo $i; ?></td>
                              <td><?php echo $row['created_at']; ?></td>
