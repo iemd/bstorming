@@ -156,11 +156,11 @@
         </div>
       </div>
     </div>
-      <style>
+      <!--<style>
           .sidenav-item span.sidenav-icon{
               color: #0288d1;
           }
-      </style>
+      </style>-->
       <?php if($Role==HR){ ?>
       <div class="layout-main"><!--left sidebar -->
         <div class="layout-sidebar">
@@ -190,7 +190,7 @@
 
                  <li class="sidenav-item has-subnav <?php echo emp_navactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
                       <a href="#" title="Employee Management" aria-haspopup="true">
-                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-icon icon icon-users"></span>
                       <span class="sidenav-label">Employee Management</span>
                     </a>
                       <ul class="sidenav-subnav collapse">
@@ -202,7 +202,7 @@
                   </li>
                    <li class="sidenav-item has-subnav <?php echo store_navactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
                       <a href="#" title="Store Management" aria-haspopup="true">
-                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-icon icon icon-shopping-cart"></span>
                       <span class="sidenav-label">Store Management</span>
                     </a>
                       <ul class="sidenav-subnav collapse">
@@ -215,7 +215,7 @@
                   </li>
                    <li class="sidenav-item has-subnav">
                       <a href="#" title="Operations Management" aria-haspopup="true">
-                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-icon icon icon-gear"></span>
                       <span class="sidenav-label">Operations Management</span>
                     </a>
                       <ul class="sidenav-subnav collapse">
@@ -228,7 +228,7 @@
                   </li>
                   <li class="sidenav-item has-subnav">
                       <a href="#" title="Task Management" aria-haspopup="true">
-                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-icon icon icon-tasks"></span>
                       <span class="sidenav-label">Task Management</span>
                     </a>
                       <ul class="sidenav-subnav collapse">
@@ -241,7 +241,7 @@
                   </li>
                   <li class="sidenav-item has-subnav">
                       <a href="#" title="Reporting Management" aria-haspopup="true">
-                      <span class="sidenav-icon icon icon-columns"></span>
+                      <span class="sidenav-icon icon icon-file-text"></span>
                       <span class="sidenav-label">Reporting Management</span>
                     </a>
                       <ul class="sidenav-subnav collapse">
@@ -409,7 +409,7 @@
 
                <li class="sidenav-item has-subnav <?php echo zm_ratestoreactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
                    <a href="<?php echo base_url('Zm/rateStore'); ?>" title="Top 20 Ranking of stores">
-                   <span class="sidenav-icon icon icon-columns"></span>
+                   <span class="sidenav-icon icon icon-star"></span>
                    <span class="sidenav-label">Rate Store</span>
                  </a>
                </li>
@@ -430,7 +430,7 @@
 
                <li class="sidenav-item has-subnav <?php echo zm_profileactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
                    <a href="<?php echo base_url('Zm/Profile'); ?>" title="Bottom 20 Ranking of Stores">
-                   <span class="sidenav-icon icon icon-columns"></span>
+                   <span class="sidenav-icon icon icon-user"></span>
                    <span class="sidenav-label">Profile Setting</span>
                  </a>
                </li>
@@ -444,7 +444,7 @@
 
                <li class="sidenav-item <?php echo zm_asmactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
                     <a href="<?php echo base_url('Zm/asmList'); ?>" title="ASM MANAGEMENT">
-                   <span class="sidenav-icon icon icon-columns"></span>
+                   <span class="sidenav-icon icon icon-users"></span>
                    <span class="sidenav-label">ASM Management</span>
                  </a>
                </li>
@@ -509,7 +509,7 @@
 
               <li class="sidenav-item has-subnav <?php echo asm_ratestoreactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
                   <a href="<?php echo base_url('Asm/rateStore'); ?>" title="Top 20 Ranking of stores">
-                  <span class="sidenav-icon icon icon-columns"></span>
+                  <span class="sidenav-icon icon icon-star"></span>
                   <span class="sidenav-label">Rate Store</span>
                 </a>
               </li>
@@ -530,7 +530,7 @@
 
               <li class="sidenav-item has-subnav <?php echo asm_profileactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
                   <a href="<?php echo base_url('Asm/Profile'); ?>" title="Bottom 20 Ranking of Stores">
-                  <span class="sidenav-icon icon icon-columns"></span>
+                  <span class="sidenav-icon icon icon-user"></span>
                   <span class="sidenav-label">Profile Setting</span>
                 </a>
               </li>
