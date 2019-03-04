@@ -510,7 +510,12 @@
                   <span class="sidenav-label">Task Management</span>
                 </a>
               </li>
-
+              <li class="sidenav-item has-subnav">
+                  <a href="task.php" title="Employee Status">
+                  <span class="sidenav-icon icon icon-suitcase"></span>
+                  <span class="sidenav-label">Meeting Management</span>
+                </a>
+              </li>
               <li class="sidenav-item has-subnav <?php echo asm_ratestoreactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
                   <a href="<?php echo base_url('Asm/rateStore'); ?>" title="Top 20 Ranking of stores">
                   <span class="sidenav-icon icon icon-star"></span>

@@ -135,6 +135,37 @@ INSERT INTO `bs_store_brand` VALUES (1,7,1,'2019-02-27 09:39:09'),(2,7,2,'2019-0
 UNLOCK TABLES;
 
 --
+-- Table structure for table `bs_store_meeting`
+--
+
+DROP TABLE IF EXISTS `bs_store_meeting`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bs_store_meeting` (
+  `sm_id` int(11) NOT NULL AUTO_INCREMENT,
+  `store_id` int(11) NOT NULL,
+  `meeting_date` date NOT NULL,
+  `meeting_time` time NOT NULL,
+  `concern` varchar(255) NOT NULL,
+  `remark` varchar(100) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `assigned_by` int(11) NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`sm_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bs_store_meeting`
+--
+
+LOCK TABLES `bs_store_meeting` WRITE;
+/*!40000 ALTER TABLE `bs_store_meeting` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bs_store_meeting` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `bs_user`
 --
 
@@ -263,4 +294,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-02 17:23:39
+-- Dump completed on 2019-03-04 17:43:25
