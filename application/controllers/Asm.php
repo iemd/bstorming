@@ -114,4 +114,18 @@ class Asm extends CI_Controller {
 				 $this->load->view('common/header');
 				 $this->load->view('profileasm', $data);
 		 }
+		 public function calendarDetails()
+		 {
+				 //$this->load->model('UserModel');
+				 //$data['asmlist'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(ASM));
+				 $this->load->view('common/header');
+				 $this->load->view('asmcalendardetails');
+		 }
+		 public function visitReport()
+		 {
+				 //$this->load->model('UserModel');
+				 //$data['asmlist'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(ASM));
+				 $this->load->view('common/header');
+				 $this->load->view('asmvisitreport');
+		 }
 }

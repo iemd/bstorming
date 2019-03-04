@@ -493,11 +493,15 @@
 
               </li>
 
-              <li class="sidenav-item has-subnav">
-                  <a href="calendar.php" title="Today Meeting Status">
-                  <span class="sidenav-icon icon icon-columns"></span>
+              <li class="sidenav-item has-subnav <?php echo calendar_navactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
+                  <a href="#" title="Today Meeting Status">
+                  <span class="sidenav-icon icon icon-calendar"></span>
                   <span class="sidenav-label">Calendar</span>
                 </a>
+                <ul class="sidenav-subnav collapse">
+                     <li class="<?php echo asm_calendaractive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>"><a href="<?php echo base_url('Asm/calendarDetails'); ?>">Calender Details</a></li>
+                      <li><a href="<?php //echo base_url('Asm/calendarDetail'); ?>">Calender View</a></li>
+                </ul>
               </li>
 
               <li class="sidenav-item has-subnav">

@@ -57,6 +57,24 @@ if ( ! function_exists('store_navactive'))
         }
     }
 }
+if ( ! function_exists('calendar_navactive'))
+{
+    function calendar_navactive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array(
+
+          "Asm/calendarDetails",
+          "Asm/visitReport"
+        );
+        if(in_array($uristring,$auri)){
+          $class_a = "active open";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}
 
 if ( ! function_exists('emp_asmactive'))
 {
@@ -162,6 +180,20 @@ if ( ! function_exists('asm_profileactive'))
     {
         $class_a = '';
         $auri = array("Asm/Profile");
+        if(in_array($uristring,$auri)){
+          $class_a = "active";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}
+if ( ! function_exists('asm_calendaractive'))
+{
+    function asm_calendaractive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array("Asm/calendarDetails","Asm/visitReport");
         if(in_array($uristring,$auri)){
           $class_a = "active";
           return $class_a;

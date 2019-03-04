@@ -129,21 +129,89 @@
          </div>
        </div>
        <?php } if($Role == ASM){ ?>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <link rel="stylesheet" href="<?php echo base_url('assets/css/demo.css');?>"/>
+        <link rel="stylesheet" href="<?php echo base_url('assets/css/theme1.css');?>"/>
          <div class="layout-content">
-            <div class="layout-content-body">
-              <div class="title-bar">
+                <div class="layout-content-body">
+                  <div class="title-bar">
 
-                <h1 class="title-bar-title">
-                    <span class="d-ib">360<sup>o</sup> Report</span>
-                  <div id="time" style="float: right"></div>
-                </h1>
+                    <h1 class="title-bar-title">
+                        <span class="d-ib">360<sup>o</sup> Report</span>
+                      <div id="time" style="float: right"></div>
+                    </h1>
 
-              </div>
+                  </div>
+                   <style>
+        			p.cc{
+        				text-align:center;
+        			}
+                        @media(max-width:765px){
+                           p.cc{
+                                margin-top: 12px;
+                               text-align: center;
+                            }
+                        }
+                    </style>
+
+                   <div class="row gutter-xs" style="margin-top: 30px">
+
+                        <div class="col-md-6">
+                             <div class="panel m-b-lg">
+                        <ul class="nav nav-tabs nav-justified">
+                          <li class="active"><a href="#today" data-toggle="tab">Today Meetings</a></li>
+                          <li><a href="#remark" data-toggle="tab">Remark</a></li>
 
 
+
+                        </ul>
+                        <div class="tab-content">
+                          <div class="tab-pane fade active in" id="today">
+                              <div class="row" style="margin-bottom:10px">
+                                  <div class="col-sm-6">
+                                      <p><b>Date :</b>&nbsp;----------</p>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-sm-4">
+                                      <p><b>1.Time :</b>&nbsp;------</p>
+                                  </div>
+                                  <div class="col-sm-4">
+                                      <p><b>2.Store :</b>&nbsp;------</p>
+                                  </div>
+                                  <div class="col-sm-4">
+                                      <p><b>3.Status :</b>&nbsp;------</p>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="tab-pane fade" id="remark">
+                              <div class="row">
+                                  <div class="col-md-2">
+                                      <p><b>Remark :</b></p>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <input type="text" class="form-control" name="remark" />
+                                  </div>
+                              </div>
+                          </div>
+
+                        </div>
+                      </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div id="caleandar">
 
             </div>
-          </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+              </div>
          <?php } ?>
     <?php } else { ?>
 
@@ -180,7 +248,8 @@
    <script src="<?php echo base_url('assets/js/vendor.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/elephant.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/application.min.js');?>"></script>
-   <script src="<?php echo base_url('assets/js/demo.min.js');?>"></script>
+   <script src="<?php echo base_url('assets/js/caleandar.js');?>"></script>
+   <script src="<?php echo base_url('assets/js/demo.js');?>"></script>
    <!--<script>
      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
