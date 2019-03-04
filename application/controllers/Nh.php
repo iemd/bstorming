@@ -72,4 +72,41 @@ class Nh extends CI_Controller {
 				redirect(base_url('Nh/viewNh'), 'refresh', $message);
 			}
 		}
+		//------------------------NH Panel------------------------------------
+		public function rateStore()
+		{
+				$this->load->model('StoreModel');
+				$zm_id = $this->session->userdata['ID'];
+				$role = $this->session->userdata['role'];
+				$data['nhstorelist'] = $this->StoreModel->getStore();
+				$this->load->view('common/header');
+				$this->load->view('nhratestore', $data);
+		}
+		public function Profile()
+		{
+				$this->load->model('UserModel');
+				$nh_id = $this->session->userdata['ID'];
+				$role = $this->session->userdata['role'];
+				$data['profilenh'] = $this->UserModel->getUser($nh_id);
+				$this->load->view('common/header');
+				$this->load->view('profilenh', $data);
+		}
+		public function asmList()
+		{
+				$this->load->model('UserModel');
+				$zm_id = $this->session->userdata['ID'];
+				$role = $this->session->userdata['role'];
+				$data['nhasmlist'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(ASM));
+				$this->load->view('common/header');
+				$this->load->view('nhasmlist', $data);
+		}
+		public function zmList()
+		{
+				$this->load->model('UserModel');
+				$zm_id = $this->session->userdata['ID'];
+				$role = $this->session->userdata['role'];
+				$data['nhzmlist'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(ZM));
+				$this->load->view('common/header');
+				$this->load->view('nhzmlist', $data);
+		}
 }

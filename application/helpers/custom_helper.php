@@ -212,3 +212,59 @@ if ( ! function_exists('zm_asmactive'))
         }
     }
 }
+if ( ! function_exists('nh_ratestoreactive'))
+{
+    function nh_ratestoreactive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array("Nh/rateStore");
+        if(in_array($uristring,$auri)){
+          $class_a = "active";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}
+if ( ! function_exists('nh_profileactive'))
+{
+    function nh_profileactive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array("Nh/Profile");
+        if(in_array($uristring,$auri)){
+          $class_a = "active";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}
+if ( ! function_exists('nh_asmactive'))
+{
+    function nh_asmactive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array("Nh/asmList");
+        if(in_array($uristring,$auri)){
+          $class_a = "active";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}
+if ( ! function_exists('nh_zmactive'))
+{
+    function nh_zmactive($uristring = '')
+    {
+        $class_a = '';
+        $auri = array("Nh/zmList");
+        if(in_array($uristring,$auri)){
+          $class_a = "active";
+          return $class_a;
+        }else{
+          return $class_a;
+        }
+    }
+}
