@@ -15,7 +15,10 @@ class AdminPanel extends CI_Controller {
 	public function Dasboard()
 	{
 		$this->load->model('UserModel');
+		$this->load->model('MeetingModel');
 		$role = $this->session->userdata('role');
+		$asm_id = $this->session->userdata['ID'];
+		$data['asmmeetings'] = $this->MeetingModel->getMeetings($asm_id);
 		//$date = date('y-m-d');
 		//$data['editData'] = $this->DataModel->getData();
 		//$data['distributorlist'] = $this->DataModel->distributorlist();
@@ -25,7 +28,7 @@ class AdminPanel extends CI_Controller {
 		//$data['todayrevenue'] = $this->DataModel->todayrevenue($date);
 		//print_r($data['editData']);die;
 		$this->load->view('common/header');
-		$this->load->view('index');
+		$this->load->view('index', $data);
 	}
 
 	public function CustomerList()

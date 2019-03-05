@@ -256,18 +256,18 @@
    <script src="<?php echo base_url('assets/js/lib/calendar/fullcalendar.min.js'); ?>"></script>
    <script type="text/javascript">
    <?php
-   /*if(!empty($meetings)){
-     foreach ($meetings as $key => $value) {
+   if(!empty($asmmeetings)){
+     foreach ($asmmeetings as $key => $value) {
          $data[$key]['title'] = $value->concern;
-         $data[$key]['start'] = $value->followup_date;
-         $data[$key]['end'] = $value->followup_date;
-         $data[$key]['backgroundColor'] = "#00a65a";
+         $data[$key]['start'] = $value->meeting_date;
+         $data[$key]['end'] = $value->meeting_date;
+         $data[$key]['backgroundColor'] = "#0288d1";
      }
    }else{
      $data[][]='';
-   }*/
+   }
     ?>
-   //var events = <?php //echo json_encode($data) ?>;
+   var events = <?php echo json_encode($data) ?>;
 
    var date = new Date();
    var d    = date.getDate(),
@@ -287,7 +287,7 @@
        week : 'week',
        day  : 'day'
      },
-     //events    : events
+     events    : events
    })
    </script>
  </body>
