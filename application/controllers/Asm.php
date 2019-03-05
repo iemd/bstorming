@@ -116,10 +116,10 @@ class Asm extends CI_Controller {
 		 }
 		 public function calendarDetails()
 		 {
-				 //$this->load->model('UserModel');
-				 //$data['asmlist'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(ASM));
+				 $this->load->model('MeetingModel');
+				 $data['meetinglist'] = $this->MeetingModel->getAllMeetings();
 				 $this->load->view('common/header');
-				 $this->load->view('asmcalendardetails');
+				 $this->load->view('asmcalendardetails',$data);
 		 }
 		 public function visitReport()
 		 {
@@ -127,5 +127,33 @@ class Asm extends CI_Controller {
 				 //$data['asmlist'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(ASM));
 				 $this->load->view('common/header');
 				 $this->load->view('asmvisitreport');
+		 }
+		 public function createMeeting()
+		 {
+				 $this->load->model('StoreModel');
+				 $data['storelist'] = $this->StoreModel->getStore();
+				 $this->load->view('common/header');
+				 $this->load->view('asmcreatemeeting',$data);
+		 }
+		 public function assignMeeting()
+		 {
+					$this->load->model('UserModel');
+					$asm_id = $this->session->userdata['ID'];
+					$data['store_id'] = $this->input->post('store');
+					$data['meeting_date'] = $this->input->post('meetingdate');
+					$data['meeting_time'] = $this->input->post('meetingtime');
+					$data['concern'] = $this->input->post('concern');
+					$data['status'] = 'Pending';
+					$data['assigned_by'] = $asm_id;
+					$insert =  $this->db->insert('bs_store_meeting',$data);
+					if($insert)
+					{
+							$message = $this->session->set_flashdata('message', 'Meeting has been successfully assigned!');
+							redirect(base_url('AdminPanel/Dasboard'), 'refresh', $message);
+
+					}else{
+							$message = $this->session->set_flashdata('error', 'Database Error!');
+							redirect(base_url('AdminPanel/Dasboard'), 'refresh', $message);
+				  }
 		 }
 }

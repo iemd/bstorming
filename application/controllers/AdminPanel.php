@@ -19,6 +19,7 @@ class AdminPanel extends CI_Controller {
 		$role = $this->session->userdata('role');
 		$asm_id = $this->session->userdata['ID'];
 		$data['asmmeetings'] = $this->MeetingModel->getMeetings($asm_id);
+		$data['todaymeetings'] = $this->MeetingModel->getTodayMeetings();
 		//$date = date('y-m-d');
 		//$data['editData'] = $this->DataModel->getData();
 		//$data['distributorlist'] = $this->DataModel->distributorlist();

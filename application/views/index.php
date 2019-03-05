@@ -164,39 +164,42 @@
                                    </div>
                              </div>
                          </div>
-
                      </div>
-
                         <div class="col-md-6">
+                          <div class="text-right">
+                            <a href="<?php echo base_url('Asm/createMeeting'); ?>" class="btn btn-primary" type="button">New Meeting</a>
+                           </div>
                              <div class="panel m-b-lg">
-                        <ul class="nav nav-tabs nav-justified">
-                          <li class="active"><a href="#today" data-toggle="tab">Today Meetings</a></li>
-                          <li><a href="#remark" data-toggle="tab">Remark</a></li>
+                             <ul class="nav nav-tabs nav-justified">
+                            <li class="active"><a href="#today" data-toggle="tab">Today Meetings</a></li>
+                          <!--<li><a href="#remark" data-toggle="tab">Remark</a></li>-->
 
 
 
                         </ul>
                         <div class="tab-content">
                           <div class="tab-pane fade active in" id="today">
+                            <?php foreach($todaymeetings as $row){ ?>
                               <div class="row" style="margin-bottom:10px">
                                   <div class="col-sm-6">
-                                      <p><b>Date :</b>&nbsp;----------</p>
+                                      <p><b>Date :</b>&nbsp;<?php echo $row['meeting_date']; ?></p>
                                   </div>
                               </div>
                               <div class="row">
                                   <div class="col-sm-4">
-                                      <p><b>1.Time :</b>&nbsp;------</p>
+                                      <p><b>1.Time :</b>&nbsp;<?php echo $row['meeting_time']; ?></p>
                                   </div>
                                   <div class="col-sm-4">
-                                      <p><b>2.Store :</b>&nbsp;------</p>
+                                      <p><b>2.Store :</b>&nbsp;<?php echo $row['store_id']; ?></p>
                                   </div>
                                   <div class="col-sm-4">
-                                      <p><b>3.Status :</b>&nbsp;------</p>
+                                      <p><b>3.Status :</b>&nbsp;<?php echo $row['status']; ?></p>
                                   </div>
                               </div>
+                            <?php } ?>
                           </div>
 
-                          <div class="tab-pane fade" id="remark">
+                          <!--<div class="tab-pane fade" id="remark">
                               <div class="row">
                                   <div class="col-md-2">
                                       <p><b>Remark :</b></p>
@@ -205,12 +208,12 @@
                                       <input type="text" class="form-control" name="remark" />
                                   </div>
                               </div>
-                          </div>
+                          </div>-->
 
                         </div>
                       </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
               </div>

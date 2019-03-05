@@ -4,17 +4,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class MeetingModel extends CI_Model
 {
 
-   public function getBrand($brand_id = null)
+   public function getAllMeetings()
     {
       $this->db->select('*');
-      if(!empty($brand_id)){
-        $this->db->where('brand_id',$brand_id);
-      }
-      $this->db->from('bs_brand');
+      $this->db->from('bs_store_meeting');
       $query = $this->db->get();
       $result = $query->result_array();
       return $result;
     }
+    public function getTodayMeetings()
+     {
+       $today = date('Y-m-d');
+       $this->db->select('*');
+       $this->db->where('meeting_date',$today);
+       $this->db->from('bs_store_meeting');
+       $query = $this->db->get();
+       $result = $query->result_array();
+       return $result;
+     }
 
     public function updateBrand($brand_id, $data)
       {

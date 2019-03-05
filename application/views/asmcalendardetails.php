@@ -56,17 +56,18 @@
                           <th>Store Name</th>
                           <th>Assigned by</th>
                           <th>Scheduled</th>
-                          <th>Generate Report</th>
+                          <th>Visit Report</th>
 
 
                         </tr>
                       </thead>
                       <tbody>
+                        <?php $i=1; ?>
+                        <?php foreach($meetinglist as $meeting) { ?>
                         <tr>
-
-                             <td>1</td>
-                             <td>---</td>
-                             <td>---</td>
+                            <td><?php echo $i; ?></td>
+                             <td><?php echo $meeting['meeting_date']; ?></td>
+                             <td><?php echo $meeting['meeting_time']; ?></td>
                              <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#store">Store</button></td>
 
                              <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#ass">Assigned by</button></td>
@@ -74,8 +75,7 @@
                              <td><a type="button" class="btn btn-info" href="<?php echo base_url('Asm/visitReport') ?>">Visit Report</a></td>
 
                         </tr>
-
-
+                      <?php $i++; } ?>                      
                       </tbody>
                     </table>
                   </div>
