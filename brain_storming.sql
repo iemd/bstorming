@@ -153,7 +153,7 @@ CREATE TABLE `bs_store_meeting` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`sm_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -162,6 +162,7 @@ CREATE TABLE `bs_store_meeting` (
 
 LOCK TABLES `bs_store_meeting` WRITE;
 /*!40000 ALTER TABLE `bs_store_meeting` DISABLE KEYS */;
+INSERT INTO `bs_store_meeting` VALUES (1,8,'2019-03-06','01:00:00','Test','Remark','Pending',3,'2019-03-05 06:37:47','2019-03-05 06:24:26'),(2,8,'2019-03-06','01:00:00','Test ','Remark','Pending',3,'2019-03-05 06:37:51','2019-03-05 06:25:15'),(3,8,'2019-03-07','01:00:00','Test ','Remark','Pending',3,'2019-03-05 06:37:54','2019-03-05 06:25:37'),(4,8,'2019-03-08','01:00:00','Test ','Remark','Pending',3,'2019-03-05 06:37:58','2019-03-05 06:25:44'),(5,8,'2019-03-09','01:00:00','Test ','Remark','Pending',3,'2019-03-05 06:38:01','2019-03-05 06:25:50'),(6,8,'2019-03-20','01:00:00','Test ','Remark','Pending',3,'2019-03-05 06:38:04','2019-03-05 06:25:57');
 /*!40000 ALTER TABLE `bs_store_meeting` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -294,4 +295,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-04 17:43:25
+-- Dump completed on 2019-03-05 12:15:21
