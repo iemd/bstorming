@@ -130,6 +130,7 @@
        </div>
        <?php } if($Role == ASM){ ?>
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <link rel="stylesheet" href="<?php echo base_url('assets/css/lib/calendar/fullcalendar.css'); ?>">
         <link rel="stylesheet" href="<?php echo base_url('assets/css/demo.css');?>"/>
         <link rel="stylesheet" href="<?php echo base_url('assets/css/theme1.css');?>"/>
          <div class="layout-content">
@@ -155,6 +156,16 @@
                     </style>
 
                    <div class="row gutter-xs" style="margin-top: 30px">
+                     <div class="col-md-6">
+                         <div class="panel panel-default">
+                             <div class="panel-body">
+                                 <div id="calendar">
+
+                                   </div>
+                             </div>
+                         </div>
+
+                     </div>
 
                         <div class="col-md-6">
                              <div class="panel m-b-lg">
@@ -199,16 +210,7 @@
                         </div>
                       </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <div id="caleandar">
 
-            </div>
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
               </div>
@@ -248,15 +250,45 @@
    <script src="<?php echo base_url('assets/js/vendor.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/elephant.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/application.min.js');?>"></script>
-   <script src="<?php echo base_url('assets/js/caleandar.js');?>"></script>
-   <script src="<?php echo base_url('assets/js/demo.js');?>"></script>
-   <!--<script>
-     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-     })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
-     ga('create', 'UA-83990101-1', 'auto');
-     ga('send', 'pageview');
-   </script>-->
+   <!--<script src="<?php //echo base_url('assets/js/caleandar.js');?>"></script>
+   <script src="<?php //echo base_url('assets/js/demo.js');?>"></script>-->
+   <script src="<?php echo base_url('assets/js/lib/calendar/moment.min.js'); ?>"></script>
+   <script src="<?php echo base_url('assets/js/lib/calendar/fullcalendar.min.js'); ?>"></script>
+   <script type="text/javascript">
+   <?php
+   /*if(!empty($meetings)){
+     foreach ($meetings as $key => $value) {
+         $data[$key]['title'] = $value->concern;
+         $data[$key]['start'] = $value->followup_date;
+         $data[$key]['end'] = $value->followup_date;
+         $data[$key]['backgroundColor'] = "#00a65a";
+     }
+   }else{
+     $data[][]='';
+   }*/
+    ?>
+   //var events = <?php //echo json_encode($data) ?>;
+
+   var date = new Date();
+   var d    = date.getDate(),
+       m    = date.getMonth(),
+       y    = date.getFullYear();
+
+   jQuery('#calendar').fullCalendar({
+
+     header    : {
+       left  : 'prev,next today',
+       center: 'title',
+       right : 'month,agendaWeek,agendaDay'
+     },
+     buttonText: {
+       today: 'today',
+       month: 'month',
+       week : 'week',
+       day  : 'day'
+     },
+     //events    : events
+   })
+   </script>
  </body>
 </html>

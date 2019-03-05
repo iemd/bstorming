@@ -506,7 +506,7 @@
 
               <li class="sidenav-item has-subnav">
                   <a href="task.php" title="Employee Status">
-                  <span class="sidenav-icon icon icon-columns"></span>
+                  <span class="sidenav-icon icon icon-file"></span>
                   <span class="sidenav-label">Task Management</span>
                 </a>
               </li>
@@ -525,7 +525,7 @@
 
               <li class="sidenav-item has-subnav">
                   <a href="push_message.php" title="Brand Store Status">
-                  <span class="sidenav-icon icon icon-columns"></span>
+                  <span class="sidenav-icon icon icon-commenting"></span>
                   <span class="sidenav-label">Push Message</span>
                 </a>
               </li>
