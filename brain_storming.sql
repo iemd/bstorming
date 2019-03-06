@@ -144,7 +144,7 @@ DROP TABLE IF EXISTS `bs_store_meeting`;
 CREATE TABLE `bs_store_meeting` (
   `sm_id` int(11) NOT NULL AUTO_INCREMENT,
   `store_id` int(11) NOT NULL,
-  `meeting_date` date NOT NULL,
+  `meeting_date` datetime NOT NULL,
   `meeting_time` varchar(50) NOT NULL,
   `concern` varchar(255) NOT NULL,
   `remark` varchar(100) NOT NULL,
@@ -153,7 +153,7 @@ CREATE TABLE `bs_store_meeting` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`sm_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -162,7 +162,7 @@ CREATE TABLE `bs_store_meeting` (
 
 LOCK TABLES `bs_store_meeting` WRITE;
 /*!40000 ALTER TABLE `bs_store_meeting` DISABLE KEYS */;
-INSERT INTO `bs_store_meeting` VALUES (1,8,'2019-03-06','01:00am','Meeting 1','Remark','Pending',3,'2019-03-05 11:46:35','2019-03-05 06:24:26'),(2,8,'2019-03-06','01:00pm','Meeting 2','Remark','Pending',3,'2019-03-05 11:46:42','2019-03-05 06:25:15'),(3,8,'2019-03-07','01:00pm','Meeting 3','Remark','Pending',3,'2019-03-05 11:46:48','2019-03-05 06:25:37'),(4,8,'2019-03-08','01:00am','Meeting 4','Remark','Pending',3,'2019-03-05 11:46:54','2019-03-05 06:25:44'),(5,8,'2019-03-09','01:00am','Meeting 5','Remark','Pending',3,'2019-03-05 11:47:00','2019-03-05 06:25:50'),(6,8,'2019-03-20','01:00pm','Meeting 6','Remark','Pending',3,'2019-03-05 11:47:07','2019-03-05 06:25:57'),(8,5,'2019-03-05','15:06am','Meeting 7','','Pending',3,'2019-03-05 11:47:16','2019-03-05 10:37:40'),(9,9,'2019-03-06','12:00pm','Meeting 8','','Pending',3,'2019-03-05 11:47:22','2019-03-05 10:52:07'),(10,7,'2019-03-05','1:00am','Meeting 9','','Pending',3,'2019-03-05 11:47:28','2019-03-05 11:24:05');
+INSERT INTO `bs_store_meeting` VALUES (1,8,'2019-03-06 00:00:00','01:00am','Meeting 1','Remark','Pending',3,'2019-03-05 11:46:35','2019-03-05 06:24:26'),(2,8,'2019-03-20 01:00:00','01:00pm','Meeting 2','Remark','Pending',3,'2019-03-06 08:05:55','2019-03-05 06:25:15'),(3,8,'2019-03-20 13:10:00','01:00pm','Meeting 3','Remark','Pending',3,'2019-03-06 08:09:04','2019-03-05 06:25:37'),(4,8,'2019-03-08 00:00:00','01:00am','Meeting 4','Remark','Pending',3,'2019-03-05 11:46:54','2019-03-05 06:25:44'),(5,8,'2019-03-09 00:00:00','01:00am','Meeting 5','Remark','Pending',3,'2019-03-05 11:47:00','2019-03-05 06:25:50'),(6,8,'2019-03-20 00:30:00','01:00pm','Meeting 6','Remark','Pending',3,'2019-03-06 08:07:47','2019-03-05 06:25:57'),(8,5,'2019-03-05 00:00:00','15:06am','Meeting 7','','Pending',3,'2019-03-05 11:47:16','2019-03-05 10:37:40'),(9,9,'2019-03-06 00:00:00','12:00pm','Meeting 8','','Pending',3,'2019-03-05 11:47:22','2019-03-05 10:52:07'),(10,7,'2019-03-05 00:00:00','1:00am','Meeting 9','','Pending',3,'2019-03-05 11:47:28','2019-03-05 11:24:05'),(11,11,'2019-03-06 00:30:00','12:30am','','','Pending',3,'2019-03-06 07:48:36','2019-03-06 07:48:36'),(12,11,'2019-03-07 01:30:00','1:30am','','','Pending',3,'2019-03-06 07:52:04','2019-03-06 07:52:04'),(13,12,'2019-03-06 14:40:53','2:20am','','','Pending',3,'2019-03-06 10:14:25','2019-03-06 09:10:53'),(14,12,'2019-03-06 15:00:00','3:00pm','','','Pending',3,'2019-03-06 10:03:21','2019-03-06 10:03:21'),(15,12,'2019-03-06 14:30:00','2:30pm','','','Pending',3,'2019-03-06 10:04:21','2019-03-06 10:04:21');
 /*!40000 ALTER TABLE `bs_store_meeting` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -295,4 +295,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-05 17:34:26
+-- Dump completed on 2019-03-06 17:46:25

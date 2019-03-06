@@ -23,7 +23,7 @@
                   <div class="row">
                         <label for="store" class="col-sm-2">Select Store:</label>
                         <div class="col-sm-6">
-                          <select name="store" class="form-control" required>
+                          <select name="store" class="form-control store" required>
                             <option value="">Select Store</option>
                             <?php foreach($storelist as $store){ ?>
                               <option value="<?php echo $store['store_id'];  ?>"><?php echo $store['store_name'];  ?></option>
@@ -31,24 +31,27 @@
                          </select>
                         </div>
                   </div><br/>
+
                   <div class="row">
-                    <label for="meetingdate" class="col-sm-2">Meeting Date:</label>
-                    <div class="col-sm-6"><input id="meetingdate" name="meetingdate" class="form-control" type="text" data-provide="datepicker" data-date-today-highlight="true" data-date-format="yyyy-mm-dd" placeholder="YYYY-MM-DD"></div>
+                    <label for="lastmeeting" class="col-sm-2">&nbsp;</label>
+                    <div class="col-sm-6" id="lastmeeting"></div>
 
                   </div><br/>
                   <div class="row">
+                    <label for="meetingdate" class="col-sm-2">Meeting Date:</label>
+                    <div class="col-sm-6"><input id="meetingdate" name="meetingdate" class="form-control" type="text" data-provide="datepicker" data-date-today-highlight="true" data-date-format="yyyy-mm-dd" placeholder="YYYY-MM-DD" required></div>
+
+                  </div><br/>
+
+                  <div class="row">
                     <label for="meetingtime" class="col-sm-2">Meeting Time:</label>
                     <div class="col-sm-6">
-                      <input id="demo-timepicker-1" name="meetingtime" class="form-control ui-timepicker-input" type="text" autocomplete="off" placeholder="HH:MM">
+                      <input id="demo-timepicker-1" name="meetingtime" class="form-control ui-timepicker-input" type="text" autocomplete="off" placeholder="HH:MM" required>
 
                     </div>
 
                   </div><br/>
 
-                    <div class="row">
-                      <label for="concern" class="col-sm-2">Concern:</label>
-                      <div class="col-sm-6"><input id="concern" name="concern" class="form-control" type="text" placeholder="Enter Concern"></div>
-                    </div><br/>
 
                     <div class="row">
                       <div class="col-sm-4">&nbsp;</div>
@@ -91,5 +94,22 @@
      ga('create', 'UA-83990101-1', 'auto');
      ga('send', 'pageview');
    </script>-->
+   <script type="text/javascript">
+   $(document).ready(function(){
+       $("select.store").change(function(){
+           var store_id = $(".store option:selected").val();
+       //alert(dist_id);
+       $.ajax({
+           url : "<?php echo site_url('Asm/StoreLastMeeting');?>",
+           method : "POST",
+           data:'store_id='+store_id,
+           success: function(data){
+             $('#lastmeeting').html(data);
+             //alert(data);
+           }
+         });
+       });
+   });
+   </script>
  </body>
 </html>

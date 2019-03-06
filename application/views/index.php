@@ -153,13 +153,17 @@
                                text-align: center;
                             }
                         }
+                        .calendar{
+                            cursor: pointer;
+                        }
+
                     </style>
 
                    <div class="row gutter-xs" style="margin-top: 30px">
                      <div class="col-md-6">
                          <div class="panel panel-default">
                              <div class="panel-body">
-                                 <div id="calendar">
+                                 <div id="calendar" class="calendar">
 
                                    </div>
                              </div>
@@ -179,24 +183,25 @@
                         </ul>
                         <div class="tab-content">
                           <div class="tab-pane fade active in" id="today">
-                            <?php foreach($todaymeetings as $row){ ?>
-                              <div class="row" style="margin-bottom:10px">
-                                  <div class="col-sm-6">
-                                      <p><b>Date :</b>&nbsp;<?php echo $row['meeting_date']; ?></p>
-                                  </div>
-                              </div>
+                            <div class="row" style="margin-bottom:10px">
+                                <div class="col-sm-6">
+                                    <p><b>Date :</b>&nbsp;<?php echo date('Y-m-d'); ?></p>
+                                </div>
+                            </div>
+                            <?php $i=1; foreach($todaymeetings as $row){ ?>
+
                               <div class="row">
                                   <div class="col-sm-4">
-                                      <p><b>1.Time :</b>&nbsp;<?php echo $row['meeting_time']; ?></p>
+                                      <p><b><?php echo $i; ?>.Time :</b>&nbsp;<?php echo $row['meeting_time']; ?></p>
                                   </div>
                                   <div class="col-sm-4">
-                                      <p><b>2.Store :</b>&nbsp;<?php echo $row['store_id']; ?></p>
+                                      <p><b>Store :</b>&nbsp;<?php echo $row['store_name']; ?></p>
                                   </div>
                                   <div class="col-sm-4">
-                                      <p><b>3.Status :</b>&nbsp;<?php echo $row['status']; ?></p>
+                                      <p><b>Status :</b>&nbsp;<?php echo $row['status']; ?></p>
                                   </div>
                               </div>
-                            <?php } ?>
+                            <?php $i++; } ?>
                           </div>
 
                           <!--<div class="tab-pane fade" id="remark">
@@ -259,9 +264,9 @@
    <script src="<?php echo base_url('assets/js/lib/calendar/fullcalendar.min.js'); ?>"></script>
    <script type="text/javascript">
    <?php
-   if(!empty($asmmeetings)){
-     foreach ($asmmeetings as $key => $value) {
-         $data[$key]['title'] = $value->concern;
+   if(!empty($allmeetings)){
+     foreach ($allmeetings as $key => $value) {
+         $data[$key]['title'] = $value->noofmeetings;
          $data[$key]['start'] = $value->meeting_date;
          $data[$key]['end'] = $value->meeting_date;
          $data[$key]['backgroundColor'] = "#0288d1";
@@ -284,13 +289,27 @@
        center: 'title',
        right : 'month,agendaWeek,agendaDay'
      },
+     dayClick: function(date, jsEvent, view) {
+       //alert('Clicked on: ' + date.format());
+       var caldate = date.format();
+       $.ajax({
+           url : "<?php echo site_url('Asm/getMeetingsByDate');?>",
+           method : "POST",
+           data:'caldate='+caldate,
+           success: function(data){
+             $('#today').html(data);
+             //alert(data);
+           }
+         });
+     },
      buttonText: {
        today: 'today',
        month: 'month',
        week : 'week',
        day  : 'day'
      },
-     events    : events
+     events    : events,
+
    })
    </script>
  </body>
