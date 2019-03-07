@@ -138,7 +138,7 @@
                   <div class="title-bar">
 
                     <h1 class="title-bar-title">
-                        <span class="d-ib">360<sup>o</sup> Report</span>
+                        <span class="d-ib" id="dashboardate"><?php echo date('Y-m-d') ?></span>
                       <div id="time" style="float: right"></div>
                     </h1>
 
@@ -266,10 +266,11 @@
    <?php
    if(!empty($allmeetings)){
      foreach ($allmeetings as $key => $value) {
-         $data[$key]['title'] = $value->noofmeetings;
+         if($value->noofmeetings ==1){$noofm = $value->noofmeetings.' Meeting';}else{$noofm = $value->noofmeetings.' Meetings';}
+         $data[$key]['title'] = $noofm;
          $data[$key]['start'] = $value->meeting_date;
          $data[$key]['end'] = $value->meeting_date;
-         $data[$key]['backgroundColor'] = "#0288d1";
+         $data[$key]['backgroundColor'] = "#008080";
      }
    }else{
      $data[][]='';
@@ -298,6 +299,7 @@
            data:'caldate='+caldate,
            success: function(data){
              $('#today').html(data);
+             $('#dashboardate').html(caldate);
              //alert(data);
            }
          });

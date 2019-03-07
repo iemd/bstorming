@@ -16,7 +16,7 @@ class MeetingModel extends CI_Model
      {
        $today = date('Y-m-d');
        $this->db->select('*');
-       $this->db->where('meeting_date',$today);
+       $this->db->where('DATE(meeting_date)',$today);
        $this->db->from('bs_store_meeting');
        $this->db->join('bs_store', 'bs_store_meeting.store_id = bs_store.store_id');
        $query = $this->db->get();
@@ -36,9 +36,9 @@ class MeetingModel extends CI_Model
      public function getLastMeetingByStore($store_id)
       {
         $this->db->select_max('meeting_date')->from('bs_store_meeting')->where('store_id',$store_id);
-        $subQuery =  $this->db->get_compiled_select();
+        $sq =  $this->db->get_compiled_select();
         $this->db->select('*');
-        $this->db->where("meeting_date IN ($subQuery)", NULL, FALSE);
+        $this->db->where("meeting_date IN ($sq)", NULL, FALSE);
         $this->db->from('bs_store_meeting');
         $this->db->join('bs_store', 'bs_store_meeting.store_id = bs_store.store_id');
         $this->db->join('bs_user', 'bs_store_meeting.assigned_by = bs_user.user_id');

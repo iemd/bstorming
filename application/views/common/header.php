@@ -500,7 +500,7 @@
                 </a>
                 <ul class="sidenav-subnav collapse">
                      <li class="<?php echo asm_calendaractive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>"><a href="<?php echo base_url('Asm/calendarDetails'); ?>">Calender Details</a></li>
-                      <li><a href="<?php //echo base_url('Asm/calendarDetail'); ?>">Calender View</a></li>
+                    
                 </ul>
               </li>
 
