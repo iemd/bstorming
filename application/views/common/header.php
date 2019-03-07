@@ -494,14 +494,14 @@
               </li>
 
               <li class="sidenav-item has-subnav <?php echo calendar_navactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
-                  <a href="#" title="Today Meeting Status">
+                  <a href="<?php echo base_url('Asm/calendarDetails'); ?>" title="Today Meeting Status" aria-haspopup="true">
                   <span class="sidenav-icon icon icon-calendar"></span>
-                  <span class="sidenav-label">Calendar</span>
+                  <span class="sidenav-label">Calender Details</span>
                 </a>
-                <ul class="sidenav-subnav collapse">
-                     <li class="<?php echo asm_calendaractive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>"><a href="<?php echo base_url('Asm/calendarDetails'); ?>">Calender Details</a></li>
-                    
-                </ul>
+                <!--<ul class="sidenav-subnav collapse">
+                     <li class="<?php //echo asm_calendaractive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>"><a href="<?php //echo base_url('Asm/calendarDetails'); ?>">Calender Details</a></li>
+
+                </ul>-->
               </li>
 
               <li class="sidenav-item has-subnav">

@@ -19,6 +19,7 @@ class MeetingModel extends CI_Model
        $this->db->where('DATE(meeting_date)',$today);
        $this->db->from('bs_store_meeting');
        $this->db->join('bs_store', 'bs_store_meeting.store_id = bs_store.store_id');
+       $this->db->join('bs_user', 'bs_store_meeting.assigned_by = bs_user.user_id');
        $query = $this->db->get();
        $result = $query->result_array();
        return $result;

@@ -55,6 +55,17 @@ class StoreModel extends CI_Model
           $result = $query->result_array();
           return $result;
        }
+       public function getStoreByBrandId($brand_id)
+       {
+          $this->db->select('*');
+          $this->db->where('sb.brand_id',$brand_id);
+          $this->db->from('bs_store_brand as sb');
+          $this->db->join('bs_store as s', 'sb.store_id = s.store_id');
+          $query = $this->db->get();
+          //echo $this->db->last_query();die;
+          $result = $query->result_array();
+          return $result;
+       }
        public function addRemoveBrand($brand_ids = null, $store_id=null)
        {
           if(empty($brand_ids)){

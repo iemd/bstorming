@@ -38,14 +38,14 @@
                </li>
              </ul>
              <div class="tab-content">
-               <div class="tab-pane fade active in" id="sales">
-                   <form action="">
+               <div class="tab-pane fade active in" id="sales"><!--SALES FLOOR-->
+          <form name="sales-floor" action="" method="post">
                    <div class="row">
                        <div class="col-sm-4">
                            <label>Front Façade (Including Signage, Window communication)</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="salesFrontFacade" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -56,10 +56,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="salesFrontFacadeRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="salesFrontFacadeImage" />
                        </div>
                    </div><br/>
                    <div class="row">
@@ -67,7 +67,7 @@
                            <label>Overall Ambience (Music/Cleanliness/Housekeeping/ lights/ temperature/ fragrance) </label>
                        </div>
                         <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="salesOverallAmbience" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -78,10 +78,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="salesOverallAmbienceRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="salesOverallAmbienceImage" />
                        </div>
                    </div><br/>
                    <div class="row">
@@ -89,7 +89,7 @@
                            <label>VM (Stock Display, Shelf Talkers, initiative etc)</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="salesVm" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -100,10 +100,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="salesVmRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="salesVmImage" />
                        </div>
                    </div><br/>
                    <div class="row">
@@ -111,7 +111,7 @@
                            <label>Cash Till Management ( Cleanliness, EDC working)</label>
                        </div>
                         <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="salesCashTill" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -122,10 +122,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="salesCashTillRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="salesCashTillImage" />
                        </div>
                    </div><br/>
                    <div class="row">
@@ -133,7 +133,7 @@
                            <label>Window Communication (Initiatives, discounts, if any)</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="salesWindowCommunication" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -144,10 +144,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="salesWindowCommunicationRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="salesWindowCommunicationImage" />
                        </div>
                    </div><br/>
                    <div class="row">
@@ -158,16 +158,16 @@
             <div class="col-sm-4"></div>
                    </div>
                        </form>
-               </div>
+               </div><!--SALES FLOOR-->
 
-               <div class="tab-pane fade" id="store">
-                  <form action="">
+               <div class="tab-pane fade" id="store"><!--STORE TEAM-->
+          <form name="store-team" action="" method="post">
                    <div class="row">
                        <div class="col-sm-4">
                            <label>About Store Manager ( Business acuman, Market knowledge, KPIs)</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="storeAboutManager" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -178,10 +178,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="storeAboutManagerRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="storeAboutManagerImage" />
                        </div>
                    </div><br/>
                    <div class="row">
@@ -189,7 +189,7 @@
                            <label>About store team (Product Knowledge, KPIs, Team SWOT)</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="storeAboutTeam" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -200,10 +200,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="storeAboutTeamRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="storeAboutTeamImage" />
                        </div>
                    </div><br/>
                     <div class="row">
@@ -211,7 +211,7 @@
                            <label>Communication Skills (Store Manager)</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="storeManagerCommunication" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -222,10 +222,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="storeManagerCommunicationRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="storeManagerCommunicationImage" />
                        </div>
                    </div><br/>
                     <div class="row">
@@ -233,7 +233,7 @@
                            <label>Staff Avalibility </label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="storeStaffAvalibility" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -244,10 +244,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="storeStaffAvalibilityRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="storeStaffAvalibilityImage" />
                        </div>
                    </div><br/>
 
@@ -256,7 +256,7 @@
                            <label>Uniform</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="storeUniform" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -267,10 +267,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="storeUniformRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="storeUniformRemarkImage" />
                        </div>
            </div><br/>
            <div class="row">
@@ -281,15 +281,15 @@
             <div class="col-sm-4"></div>
                    </div><br/>
                        </form>
-               </div>
-                 <div class="tab-pane fade" id="trial">
-                      <form action="">
+               </div><!--STORE TEAM-->
+                 <div class="tab-pane fade" id="trial"><!--TRIAL ROOM & BOH-->
+              <form name="trial-room" action="" method="post">
                    <div class="row">
                        <div class="col-sm-4">
                            <label>Lock and light</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="trialLockLight" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -300,10 +300,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="trialLockLightRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="trialLockLightImage" />
                        </div>
                    </div><br/>
                     <div class="row">
@@ -311,7 +311,7 @@
                            <label>Overall Ambience</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="trialOverallAmbience" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -322,10 +322,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="trialOverallAmbienceRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="trialOverallAmbienceImage" />
                        </div>
                    </div><br/>
                     <div class="row">
@@ -333,7 +333,7 @@
                            <label>Stock Wrack ( Condition, Fire Extinguisher)</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="trialStockWrack" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -344,10 +344,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="trialStockWrackRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="trialStockWrackImage" />
                        </div>
                    </div><br/>
                     <div class="row">
@@ -355,7 +355,7 @@
                            <label>Back Store Management (Proper category headers, Apparels in polybag)</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="trialBackStore" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -366,10 +366,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="trialBackStoreRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="trialBackStoreImage" />
                        </div>
                    </div><br/>
                     <div class="row">
@@ -377,7 +377,7 @@
                            <label>Communication Board (Target & Team, Updated with targets & Details of Achievers)</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="trialCommunication" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -388,10 +388,10 @@
 
                        </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                           <input type="text" class="form-control" name="trialCommunicationRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="trialCommunicationImage" />
                        </div>
            </div><br/>
            <div class="row">
@@ -404,7 +404,7 @@
                    </div><br/>
 
                        </form>
-                 </div>
+                 </div><!--TRIAL ROOM & BOH-->
              </div>
            </div>
              </div>

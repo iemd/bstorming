@@ -100,7 +100,7 @@ CREATE TABLE `bs_store` (
 
 LOCK TABLES `bs_store` WRITE;
 /*!40000 ALTER TABLE `bs_store` DISABLE KEYS */;
-INSERT INTO `bs_store` VALUES (2,'Test Store23','dhljkhg','sgsg','800001','AYTIS','4543653','STORE002','74e59720dd08b1db45f7152d082c5051','2019-02-27 10:34:03','2019-02-25 10:09:35'),(3,'Test Store3','patna','patna','800001','AYTIS','4543653','STORE003','f4cc399f0effd13c888e310ea2cf5399','2019-02-25 10:43:00','2019-02-25 10:30:26'),(5,'Test Store 4','patna','patna','800001','AYTIS','4543653','STORE004','e10adc3949ba59abbe56e057f20f883e','2019-02-25 10:43:47','2019-02-25 10:43:47'),(6,'Test Store 5','patna','patna','800001','AYTIS','4543653','STORE005','e10adc3949ba59abbe56e057f20f883e','2019-02-25 10:44:04','2019-02-25 10:44:04'),(7,'Test Store 5','patna','patna','800001','AYTIS','4543653','STORE006','e10adc3949ba59abbe56e057f20f883e','2019-02-25 10:45:09','2019-02-25 10:45:09'),(8,'Test Store 6','patna','patna','800001','AYTIS','4543653','STORE007','e10adc3949ba59abbe56e057f20f883e','2019-02-25 10:45:30','2019-02-25 10:45:30'),(9,'Test Store 234','patna','patna','800001','AYTIS','4543653','STORE008','45c2a4c1773c1c4a72cab21e4a153343','2019-02-27 10:22:55','2019-02-27 10:22:55'),(10,'Test Store166','patna','patna','800001','AYTIS','4543653','STORE009','e10adc3949ba59abbe56e057f20f883e','2019-03-02 05:38:57','2019-03-02 05:38:57'),(11,'Test Store 545','patna','patna','800001','AYTIS','4543653','STORE0010','e10adc3949ba59abbe56e057f20f883e','2019-03-02 05:39:12','2019-03-02 05:39:12'),(12,'Test Store1656','patna','patna','800001','AYTIS','4543653','STORE0011','e10adc3949ba59abbe56e057f20f883e','2019-03-02 05:39:25','2019-03-02 05:39:25'),(13,'Test Store1','patna','patna','800001','AYTIS','4543653','STORE0012','e10adc3949ba59abbe56e057f20f883e','2019-03-02 05:39:40','2019-03-02 05:39:40');
+INSERT INTO `bs_store` VALUES (2,'Test Store23','dhljkhg','sgsg','800001','AYTIS','4543653','STORE002','e10adc3949ba59abbe56e057f20f883e','2019-03-07 04:47:25','2019-02-25 10:09:35'),(3,'Test Store3','patna','patna','800001','AYTIS','4543653','STORE003','f4cc399f0effd13c888e310ea2cf5399','2019-02-25 10:43:00','2019-02-25 10:30:26'),(5,'Test Store 4','patna','patna','800001','AYTIS','4543653','STORE004','e10adc3949ba59abbe56e057f20f883e','2019-02-25 10:43:47','2019-02-25 10:43:47'),(6,'Test Store 5','patna','patna','800001','AYTIS','4543653','STORE005','e10adc3949ba59abbe56e057f20f883e','2019-02-25 10:44:04','2019-02-25 10:44:04'),(7,'Test Store 5','patna','patna','800001','AYTIS','4543653','STORE006','e10adc3949ba59abbe56e057f20f883e','2019-02-25 10:45:09','2019-02-25 10:45:09'),(8,'Test Store 6','patna','patna','800001','AYTIS','4543653','STORE007','e10adc3949ba59abbe56e057f20f883e','2019-02-25 10:45:30','2019-02-25 10:45:30'),(9,'Test Store 234','patna','patna','800001','AYTIS','4543653','STORE008','e10adc3949ba59abbe56e057f20f883e','2019-03-07 06:57:36','2019-02-27 10:22:55'),(10,'Test Store166','patna','patna','800001','AYTIS','4543653','STORE009','e10adc3949ba59abbe56e057f20f883e','2019-03-02 05:38:57','2019-03-02 05:38:57'),(11,'Test Store 545','patna','patna','800001','AYTIS','4543653','STORE0010','e10adc3949ba59abbe56e057f20f883e','2019-03-02 05:39:12','2019-03-02 05:39:12'),(12,'Test Store1656','patna','patna','800001','AYTIS','4543653','STORE0011','e10adc3949ba59abbe56e057f20f883e','2019-03-02 05:39:25','2019-03-02 05:39:25'),(13,'Test Store1','patna','patna','800001','AYTIS','4543653','STORE0012','e10adc3949ba59abbe56e057f20f883e','2019-03-02 05:39:40','2019-03-02 05:39:40');
 /*!40000 ALTER TABLE `bs_store` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,6 +164,61 @@ LOCK TABLES `bs_store_meeting` WRITE;
 /*!40000 ALTER TABLE `bs_store_meeting` DISABLE KEYS */;
 INSERT INTO `bs_store_meeting` VALUES (1,8,'2019-03-06 00:00:00','01:00am','Meeting 1','Remark','Pending',3,'2019-03-05 11:46:35','2019-03-05 06:24:26'),(2,8,'2019-03-20 01:00:00','01:00pm','Meeting 2','Remark','Pending',3,'2019-03-06 08:05:55','2019-03-05 06:25:15'),(3,8,'2019-03-20 13:10:00','01:00pm','Meeting 3','Remark','Pending',3,'2019-03-06 08:09:04','2019-03-05 06:25:37'),(4,8,'2019-03-08 00:00:00','01:00am','Meeting 4','Remark','Pending',3,'2019-03-05 11:46:54','2019-03-05 06:25:44'),(5,8,'2019-03-09 00:00:00','01:00am','Meeting 5','Remark','Pending',3,'2019-03-05 11:47:00','2019-03-05 06:25:50'),(6,8,'2019-03-20 00:30:00','01:00pm','Meeting 6','Remark','Pending',3,'2019-03-06 08:07:47','2019-03-05 06:25:57'),(8,5,'2019-03-05 00:00:00','15:06am','Meeting 7','','Pending',3,'2019-03-05 11:47:16','2019-03-05 10:37:40'),(9,9,'2019-03-06 00:00:00','12:00pm','Meeting 8','','Pending',3,'2019-03-05 11:47:22','2019-03-05 10:52:07'),(10,7,'2019-03-05 00:00:00','1:00am','Meeting 9','','Pending',3,'2019-03-05 11:47:28','2019-03-05 11:24:05'),(11,11,'2019-03-06 00:30:00','12:30am','','','Pending',3,'2019-03-06 07:48:36','2019-03-06 07:48:36'),(12,11,'2019-03-07 01:30:00','1:30am','','','Pending',3,'2019-03-06 07:52:04','2019-03-06 07:52:04'),(13,12,'2019-03-06 14:40:53','2:20am','','','Pending',3,'2019-03-06 10:14:25','2019-03-06 09:10:53'),(14,12,'2019-03-06 15:00:00','3:00pm','','','Pending',3,'2019-03-06 10:03:21','2019-03-06 10:03:21'),(15,12,'2019-03-06 14:30:00','2:30pm','','','Pending',3,'2019-03-06 10:04:21','2019-03-06 10:04:21');
 /*!40000 ALTER TABLE `bs_store_meeting` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bs_store_rating_review`
+--
+
+DROP TABLE IF EXISTS `bs_store_rating_review`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bs_store_rating_review` (
+  `srr_id` int(11) NOT NULL AUTO_INCREMENT,
+  `sales_front_facade` tinyint(4) NOT NULL,
+  `sales_front_facade_remark` varchar(100) NOT NULL,
+  `sales_front_facade_image` varchar(50) NOT NULL,
+  `sales_overall_ambience` tinyint(4) NOT NULL,
+  `sales_overall_ambience_remark` varchar(100) NOT NULL,
+  `sales_overall_ambience_image` varchar(50) NOT NULL,
+  `sales_vm` tinyint(4) NOT NULL,
+  `sales_vm_remark` varchar(100) NOT NULL,
+  `sales_vm_image` varchar(50) NOT NULL,
+  `sales_cash_till` tinyint(4) NOT NULL,
+  `sales_cash_till_remark` varchar(100) NOT NULL,
+  `sales_cash_till_image` varchar(50) NOT NULL,
+  `sales_window_communication` tinyint(4) NOT NULL,
+  `sales_window_communication_remark` varchar(100) NOT NULL,
+  `sales_window_communication_image` varchar(50) NOT NULL,
+  `store_about_manager` tinyint(4) NOT NULL,
+  `store_about_manager_remark` varchar(100) NOT NULL,
+  `store_about_manager_image` varchar(50) NOT NULL,
+  `store_about_team` tinyint(4) NOT NULL,
+  `store_about_team_remark` varchar(100) NOT NULL,
+  `store_about_team_image` varchar(50) NOT NULL,
+  `store_manager_communication` tinyint(4) NOT NULL,
+  `store_manager_communication_remark` varchar(100) NOT NULL,
+  `store_manager_communication_image` varchar(50) NOT NULL,
+  `store_staff_avalibility` tinyint(4) NOT NULL,
+  `store_staff_avalibility_remark` varchar(100) NOT NULL,
+  `store_staff_avalibility_image` varchar(50) NOT NULL,
+  `store_uniform` tinyint(4) NOT NULL,
+  `store_uniform_remark` varchar(100) NOT NULL,
+  `store_uniform_remark_image` varchar(50) NOT NULL,
+  `trial_lock_light` tinyint(4) NOT NULL,
+  `trial_lock_light_remark` varchar(100) NOT NULL,
+  `trial_lock_light_image` varchar(50) NOT NULL,
+  PRIMARY KEY (`srr_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bs_store_rating_review`
+--
+
+LOCK TABLES `bs_store_rating_review` WRITE;
+/*!40000 ALTER TABLE `bs_store_rating_review` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bs_store_rating_review` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -295,4 +350,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-06 17:46:25
+-- Dump completed on 2019-03-07 17:51:52
