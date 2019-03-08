@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/css/vendor.min.css');?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/elephant.min.css');?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/application.min.css');?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/signup-1.min.css');?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body class="layout layout-header-fixed">

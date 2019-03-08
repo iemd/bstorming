@@ -73,7 +73,7 @@
 
                              <!--<td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#ass">Assigned by</button></td>-->
                              <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#sch">Schedule</button></td>
-                             <td><a type="button" class="btn btn-info" href="<?php echo base_url('Asm/visitReport/').$meeting['store_id']; ?>">Visit Report</a></td>
+                             <td><a type="button" class="btn btn-info" href="<?php echo base_url('Asm/visitReportStore/').$meeting['store_id']; ?>">Visit Report</a></td>
 
                         </tr>
                       <?php $i++; } ?>

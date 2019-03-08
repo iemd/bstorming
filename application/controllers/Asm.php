@@ -121,12 +121,21 @@ class Asm extends CI_Controller {
 				 $this->load->view('common/header');
 				 $this->load->view('asmcalendardetails',$data);
 		 }
-		 public function visitReport($store_id = null)
+		 public function visitReportStore($store_id = null)
 		 {
 				 //$this->load->model('UserModel');
 				 //$data['asmlist'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(ASM));
+				 $data['store_id'] = $store_id;
 				 $this->load->view('common/header');
-				 $this->load->view('asmvisitreport');
+				 $this->load->view('asmvisitreport',$data);
+		 }
+		 public function visitReportEmployee($store_id = null)
+		 {
+				 //$this->load->model('UserModel');
+				 //$data['asmlist'] = $this->UserModel->getUserByRoleId($this->UserModel->getRoleId(ASM));
+				 $data['store_id'] = $store_id;
+				 $this->load->view('common/header');
+				 $this->load->view('asmvisitreportemployee',$data);
 		 }
 		 public function createMeeting()
 		 {
@@ -223,5 +232,84 @@ class Asm extends CI_Controller {
 									 $i++; }
 
 									echo $table;
+		 }
+		 public function saveVisitReportStore($store_id)
+		 {
+					$this->load->model('UserModel');
+					$asm_id = $this->session->userdata['ID'];
+
+					$data['sales_front_facade'] = $this->input->post('salesFrontFacade');
+				  $data['sales_front_facade_remark'] = $this->input->post('salesFrontFacadeRemark');
+					//$data['sales_front_facade_image'] = $this->input->post('salesFrontFacadeImage');
+
+					$data['sales_overall_ambience'] = $this->input->post('salesOverallAmbience');
+					$data['sales_overall_ambience_remark'] = $this->input->post('salesOverallAmbienceRemark');
+					//$data['sales_overall_ambience_image'] = $this->input->post('salesOverallAmbienceImage');
+
+					$data['sales_vm'] = $this->input->post('salesVm');
+					$data['sales_vm_remark'] = $this->input->post('salesVmRemark');
+					//$data['sales_vm_image'] = $this->input->post('salesVmImage');
+
+					$data['sales_cash_till'] = $this->input->post('salesCashTill');
+					$data['sales_cash_till_remark'] = $this->input->post('salesCashTillRemark');
+					//$data['sales_cash_till_image'] = $this->input->post('salesCashTillImage');
+
+					$data['sales_window_communication'] = $this->input->post('salesWindowCommunication');
+					$data['sales_window_communication_remark'] = $this->input->post('salesWindowCommunicationRemark');
+					//$data['sales_window_communication_image'] = $this->input->post('salesWindowCommunicationImage');
+          //-------
+					$data['store_about_manager'] = $this->input->post('storeAboutManager');
+					$data['store_about_manager_remark'] = $this->input->post('storeAboutManagerRemark');
+					//$data['store_about_manager_image'] = $this->input->post('storeAboutManagerImage');
+
+					$data['store_about_team'] = $this->input->post('storeAboutTeam');
+					$data['store_about_team_remark'] = $this->input->post('storeAboutTeamRemark');
+					//$data['store_about_team_image'] = $this->input->post('storeAboutTeamImage');
+
+					$data['store_manager_communication'] = $this->input->post('storeManagerCommunication');
+					$data['store_manager_communication_remark'] = $this->input->post('storeManagerCommunicationRemark');
+					//$data['store_manager_communication_image'] = $this->input->post('storeManagerCommunicationImage');
+
+					$data['store_staff_avalibility'] = $this->input->post('storeStaffAvalibility');
+					$data['store_staff_avalibility_remark'] = $this->input->post('storeStaffAvalibilityRemark');
+					//$data['store_staff_avalibility_image'] = $this->input->post('storeStaffAvalibilityImage');
+
+					$data['store_uniform'] = $this->input->post('storeUniform');
+					$data['store_uniform_remark'] = $this->input->post('storeUniformRemark');
+					//$data['store_uniform_remark_image'] = $this->input->post('storeUniformRemarkImage');
+					//--------
+					$data['trial_lock_light'] = $this->input->post('trialLockLight');
+					$data['trial_lock_light_remark'] = $this->input->post('trialLockLightRemark');
+					//$data['trial_lock_light_image'] = $this->input->post('trialLockLightImage');
+
+					$data['trial_overall_ambience'] = $this->input->post('trialOverallAmbience');
+					$data['trial_overall_ambience_remark'] = $this->input->post('trialOverallAmbienceRemark');
+					//$data['trial_overall_ambience_image'] = $this->input->post('trialOverallAmbienceImage');
+
+					$data['trial_stock_wrack'] = $this->input->post('trialStockWrack');
+					$data['trial_stock_wrack_remark'] = $this->input->post('trialStockWrackRemark');
+					//$data['trial_stock_wrack_image'] = $this->input->post('trialStockWrackImage');
+
+					$data['trial_back_store'] = $this->input->post('trialBackStore');
+					$data['trial_back_store_remark'] = $this->input->post('trialBackStoreRemark');
+					//$data['trial_back_store_image'] = $this->input->post('trialBackStoreImage');
+
+					$data['trial_communication'] = $this->input->post('trialCommunication');
+					$data['trial_communication_remark'] = $this->input->post('trialCommunicationRemark');
+					//$data['trial_communication_image'] = $this->input->post('trialCommunicationImage');
+
+					$data['store_id'] = $store_id;
+					$asm_id = $this->session->userdata['ID'];
+					$data['rated_by'] = $asm_id;
+					$insert =  $this->db->insert('bs_store_rating_review',$data);
+					if($insert)
+					{
+							$message = $this->session->set_flashdata('message', 'Report has been successfully saved!');
+							redirect(base_url('Asm/visitReportEmployee/').$store_id, 'refresh', $message);
+
+					}else{
+							$message = $this->session->set_flashdata('error', 'Database Error!');
+							redirect(base_url('Asm/calendarDetails/'), 'refresh', $message);
+				}
 		 }
 }
