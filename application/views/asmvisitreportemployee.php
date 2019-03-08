@@ -81,7 +81,7 @@
                             <label>Employee wear proper uniform/neat clothes batches</label>
                             </div>
                             <div class="col-sm-2 col-xs-4">
-                            <select class="form-control">
+                            <select name="dressProper" class="form-control">
                                 <option value="">Rating</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -92,10 +92,10 @@
 
                             </div>
                             <div class="col-sm-3 col-xs-4">
-                            <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                            <input type="text" class="form-control" name="dressProperRemark" placeholder="Remark" />
                             </div>
                             <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="dressProperImage" />
                             </div>
 
                             </div><br/>
@@ -104,20 +104,20 @@
                             <label>Maintains proper hygiene .</label>
                             </div>
                             <div class="col-sm-2 col-xs-4">
-                            <select class="form-control">
-                            <option value="">Rating</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                             <option value="5">5</option>
+                            <select name="dressHygiene" class="form-control">
+                                  <option value="">Rating</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
                             </select>
                             </div>
                             <div class="col-sm-3 col-xs-4">
-                            <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                            <input type="text" class="form-control" name="dressHygieneRemark" placeholder="Remark" />
                             </div>
                             <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="dressHygieneImage" />
                             </div>
                             </div><br/>
                             <div class="row">
@@ -138,7 +138,7 @@
                                <label>Welcome the customer with a smile. </label>
                            </div>
                            <div class="col-sm-2 col-xs-4">
-                               <select class="form-control">
+                               <select name="gestSmile" class="form-control">
                                    <option value="">Rating</option>
                                    <option value="1">1</option>
                                     <option value="2">2</option>
@@ -148,10 +148,10 @@
                                </select>
                            </div>
                           <div class="col-sm-3 col-xs-4">
-                             <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                             <input type="text" class="form-control" name="gestSmileRemark" placeholder="Remark" />
                            </div>
                             <div class="col-sm-3 col-xs-4">
-                                <input type="file" class="form-control" name="image" />
+                                <input type="file" class="form-control" name="gestSmileImage" />
                            </div>
                        </div><br/>
                        <div class="row">
@@ -159,7 +159,7 @@
                                <label>Asks politely for assistance/help to the customer .</label>
                            </div>
                            <div class="col-sm-2 col-xs-4">
-                               <select class="form-control">
+                               <select name="gestHelp" class="form-control">
                                    <option value="">Rating</option>
                                    <option value="1">1</option>
                                     <option value="2">2</option>
@@ -169,10 +169,10 @@
                                </select>
                            </div>
                           <div class="col-sm-3 col-xs-4">
-                             <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                             <input type="text" class="form-control" name="gestHelpRemark" placeholder="Remark" />
                            </div>
                             <div class="col-sm-3 col-xs-4">
-                                <input type="file" class="form-control" name="image" />
+                                <input type="file" class="form-control" name="gestHelpImage" />
                            </div>
                        </div><br/>
                         <div class="row">
@@ -180,7 +180,7 @@
                                <label>understang customer need and requirement</label>
                            </div>
                            <div class="col-sm-2 col-xs-4">
-                               <select class="form-control">
+                               <select name="gestNeed" class="form-control">
                                    <option value="">Rating</option>
                                    <option value="1">1</option>
                                     <option value="2">2</option>
@@ -190,10 +190,10 @@
                                </select>
                            </div>
                           <div class="col-sm-3 col-xs-4">
-                             <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                             <input type="text" class="form-control" name="gestNeedRemark" placeholder="Remark" />
                            </div>
                             <div class="col-sm-3 col-xs-4">
-                                <input type="file" class="form-control" name="image" />
+                                <input type="file" class="form-control" name="gestNeedImage" />
                            </div>
                        </div><br/>
                         <div class="row">
@@ -201,7 +201,7 @@
                                <label>Tries to build a relationship/bond with the customer</label>
                            </div>
                            <div class="col-sm-2 col-xs-4">
-                               <select class="form-control">
+                               <select name="gestRelationship" class="form-control">
                                    <option value="">Rating</option>
                                    <option value="1">1</option>
                                     <option value="2">2</option>
@@ -211,10 +211,10 @@
                                </select>
                            </div>
                           <div class="col-sm-3 col-xs-4">
-                             <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                             <input type="text" class="form-control" name="gestRelationshipRemark" placeholder="Remark" />
                            </div>
                             <div class="col-sm-3 col-xs-4">
-                                <input type="file" class="form-control" name="image" />
+                                <input type="file" class="form-control" name="gestRelationshipImage" />
                            </div>
                        </div><br/>
                         <div class="row">
@@ -222,7 +222,7 @@
                                <label>Add on sales to improve (UPT/QPC).</label>
                            </div>
                            <div class="col-sm-2 col-xs-4">
-                               <select class="form-control">
+                               <select name="gestUptQpc" class="form-control">
                                    <option value="">Rating</option>
                                    <option value="1">1</option>
                                     <option value="2">2</option>
@@ -232,10 +232,10 @@
                                </select>
                            </div>
                           <div class="col-sm-3 col-xs-4">
-                             <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                             <input type="text" class="form-control" name="gestUptQpcRemark" placeholder="Remark" />
                            </div>
                             <div class="col-sm-3 col-xs-4">
-                                <input type="file" class="form-control" name="image" />
+                                <input type="file" class="form-control" name="gestUptQpcImage" />
                            </div>
                        </div><br/>
                        <div class="row">
@@ -243,7 +243,7 @@
                                <label>Create a wow moment to ensure repeat purchase from the store. Thanks you</label>
                            </div>
                            <div class="col-sm-2 col-xs-4">
-                               <select class="form-control">
+                               <select name="gestWowMoment" class="form-control">
                                    <option value="">Rating</option>
                                    <option value="1">1</option>
                                     <option value="2">2</option>
@@ -253,10 +253,10 @@
                                </select>
                            </div>
                           <div class="col-sm-3 col-xs-4">
-                             <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                             <input type="text" class="form-control" name="gestWowMomentRemark" placeholder="Remark" />
                            </div>
                             <div class="col-sm-3 col-xs-4">
-                                <input type="file" class="form-control" name="image" />
+                                <input type="file" class="form-control" name="gestWowMomentImage" />
                            </div>
                        </div>
                        <div class="row">
@@ -277,7 +277,7 @@
                           <label>Well aware about the current offers in the store and competitos products</label>
                       </div>
                        <div class="col-sm-2 col-xs-4">
-                          <select class="form-control">
+                          <select name="awarenessCurrentOffers" class="form-control">
                               <option value="">Rating</option>
                               <option value="1">1</option>
                                <option value="2">2</option>
@@ -287,10 +287,10 @@
                           </select>
                       </div>
                      <div class="col-sm-3 col-xs-4">
-                        <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                        <input type="text" class="form-control" name="awarenessCurrentOffersRemark" placeholder="Remark" />
                       </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="file" class="form-control" name="image" />
+                           <input type="file" class="form-control" name="awarenessCurrentOffersImage" />
                       </div>
                   </div><br/>
 
@@ -299,7 +299,7 @@
                           <label>Well aware about the product categories in the store.</label>
                       </div>
                       <div class="col-sm-2 col-xs-4">
-                          <select class="form-control">
+                          <select name="awarenessProductCategories" class="form-control">
                               <option value="">Rating</option>
                               <option value="1">1</option>
                                <option value="2">2</option>
@@ -309,10 +309,10 @@
                           </select>
                       </div>
                      <div class="col-sm-3 col-xs-4">
-                        <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                        <input type="text" class="form-control" name="awarenessProductCategoriesRemark" placeholder="Remark" />
                       </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="file" class="form-control" name="image" />
+                           <input type="file" class="form-control" name="awarenessProductCategoriesImage" />
                       </div>
                   </div><br/>
                    <div class="row">
@@ -320,7 +320,7 @@
                           <label>Has the basic knowledge about the brand .</label>
                       </div>
                        <div class="col-sm-2 col-xs-4">
-                          <select class="form-control">
+                          <select name="awarenessBrand" class="form-control">
                               <option value="">Rating</option>
                               <option value="1">1</option>
                                <option value="2">2</option>
@@ -330,10 +330,10 @@
                           </select>
                       </div>
                      <div class="col-sm-3 col-xs-4">
-                        <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                        <input type="text" class="form-control" name="awarenessBrandRemark" placeholder="Remark" />
                       </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="file" class="form-control" name="image" />
+                           <input type="file" class="form-control" name="awarenessBrandImage" />
                       </div>
                   </div><br/>
                    <div class="row">
@@ -341,7 +341,7 @@
                           <label>Aware about his targets along with the store target.</label>
                       </div>
                       <div class="col-sm-2 col-xs-4">
-                          <select class="form-control">
+                          <select name="awarenessTargets" class="form-control">
                               <option value="">Rating</option>
                               <option value="1">1</option>
                                <option value="2">2</option>
@@ -351,10 +351,10 @@
                           </select>
                       </div>
                      <div class="col-sm-3 col-xs-4">
-                        <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                        <input type="text" class="form-control" name="awarenessTargetsRemark" placeholder="Remark" />
                       </div>
                        <div class="col-sm-3 col-xs-4">
-                           <input type="file" class="form-control" name="image" />
+                           <input type="file" class="form-control" name="awarenessTargetsImage" />
                       </div>
                    </div><br/>
                    <div class="row">
@@ -375,7 +375,7 @@
                            <label>Strong commitment to achieve objectives / targets.</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="driveCommitment" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -385,10 +385,10 @@
                            </select>
                        </div>
                       <div class="col-sm-3 col-xs-4">
-                         <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                         <input type="text" class="form-control" name="driveCommitmentRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="driveCommitmentImage" />
                        </div>
                    </div><br/>
 
@@ -397,7 +397,7 @@
                            <label>Monitors the actions regularly to achieve the results</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
+                           <select name="driveMonitorsActions" class="form-control">
                                <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
@@ -407,10 +407,10 @@
                            </select>
                        </div>
                       <div class="col-sm-3 col-xs-4">
-                         <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                         <input type="text" class="form-control" name="driveMonitorsActionsRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="driveMonitorsActionsImage" />
                        </div>
                    </div><br/>
                     <div class="row">
@@ -418,8 +418,8 @@
                            <label>Is flexible to adapt changes when needed.</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select class="form-control">
-                               <option value="">Rating</option>
+                           <select name="" class="form-control">
+                               <option value="driveAdaptChanges">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
                                  <option value="3">3</option>
@@ -428,10 +428,10 @@
                            </select>
                        </div>
                       <div class="col-sm-3 col-xs-4">
-                         <input type="text" class="form-control" name="remark" placeholder="Remark" />
+                         <input type="text" class="form-control" name="driveAdaptChangesRemark" placeholder="Remark" />
                        </div>
                         <div class="col-sm-3 col-xs-4">
-                            <input type="file" class="form-control" name="image" />
+                            <input type="file" class="form-control" name="driveAdaptChangesImage" />
                        </div>
                     </div><br/>
                    <div class="row">
