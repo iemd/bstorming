@@ -72,6 +72,77 @@ INSERT INTO `bs_brand` VALUES (1,'Brand 1','2019-02-23 11:57:39','2019-02-23 11:
 UNLOCK TABLES;
 
 --
+-- Table structure for table `bs_employee_rating_review`
+--
+
+DROP TABLE IF EXISTS `bs_employee_rating_review`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bs_employee_rating_review` (
+  `emprr_id` int(11) NOT NULL AUTO_INCREMENT,
+  `dress_proper` tinyint(4) NOT NULL,
+  `dress_proper_remark` varchar(100) NOT NULL,
+  `dress_proper_image` varchar(50) NOT NULL,
+  `dress_hygiene` tinyint(4) NOT NULL,
+  `dress_hygiene_remark` varchar(100) NOT NULL,
+  `dress_hygiene_image` varchar(50) NOT NULL,
+  `gest_welcome` tinyint(4) NOT NULL,
+  `gest_welcome_remark` varchar(100) NOT NULL,
+  `gest_welcome_image` varchar(50) NOT NULL,
+  `gest_help` tinyint(4) NOT NULL,
+  `gest_help_remark` varchar(100) NOT NULL,
+  `gest_help_image` varchar(50) NOT NULL,
+  `gest_need` tinyint(4) NOT NULL,
+  `gest_need_remark` varchar(100) NOT NULL,
+  `gest_need_image` varchar(50) NOT NULL,
+  `gest_relationship` tinyint(4) NOT NULL,
+  `gest_relationship_remark` varchar(100) NOT NULL,
+  `gest_relationship_image` varchar(50) NOT NULL,
+  `gest_upt_qpc` tinyint(4) NOT NULL,
+  `gest_upt_qpc_remark` varchar(100) NOT NULL,
+  `gest_upt_qpc_image` varchar(50) NOT NULL,
+  `gest_wow_moment` tinyint(4) NOT NULL,
+  `gest_wow_moment_remark` varchar(100) NOT NULL,
+  `gest_wow_moment_image` varchar(50) NOT NULL,
+  `awareness_current_offers` tinyint(4) NOT NULL,
+  `awareness_current_offers_remark` varchar(100) NOT NULL,
+  `awareness_current_offers_image` varchar(50) NOT NULL,
+  `awareness_product_categories` tinyint(4) NOT NULL,
+  `awareness_product_categories_remark` varchar(100) NOT NULL,
+  `awareness_product_categories_image` varchar(50) NOT NULL,
+  `awareness_brand` tinyint(4) NOT NULL,
+  `awareness_brand_remark` varchar(100) NOT NULL,
+  `awareness_brand_image` varchar(50) NOT NULL,
+  `awareness_targets` tinyint(4) NOT NULL,
+  `awareness_targets_remark` varchar(100) NOT NULL,
+  `awareness_targets_image` varchar(50) NOT NULL,
+  `drive_commitment` tinyint(4) NOT NULL,
+  `drive_commitment_remark` varchar(100) NOT NULL,
+  `drive_commitment_image` varchar(50) NOT NULL,
+  `drive_monitors_actions` tinyint(4) NOT NULL,
+  `drive_monitors_actions_remark` varchar(100) NOT NULL,
+  `drive_monitors_actions_image` varchar(50) NOT NULL,
+  `drive_adapt_changes` tinyint(4) NOT NULL,
+  `drive_adapt_changes_remark` varchar(100) NOT NULL,
+  `drive_adapt_changes_image` varchar(50) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `rated_by` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`emprr_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bs_employee_rating_review`
+--
+
+LOCK TABLES `bs_employee_rating_review` WRITE;
+/*!40000 ALTER TABLE `bs_employee_rating_review` DISABLE KEYS */;
+INSERT INTO `bs_employee_rating_review` VALUES (1,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 11:29:55'),(2,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 11:30:30');
+/*!40000 ALTER TABLE `bs_employee_rating_review` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `bs_store`
 --
 
@@ -208,8 +279,23 @@ CREATE TABLE `bs_store_rating_review` (
   `trial_lock_light` tinyint(4) NOT NULL,
   `trial_lock_light_remark` varchar(100) NOT NULL,
   `trial_lock_light_image` varchar(50) NOT NULL,
+  `trial_overall_ambience` tinyint(4) NOT NULL,
+  `trial_overall_ambience_remark` varchar(100) NOT NULL,
+  `trial_overall_ambience_image` varchar(50) NOT NULL,
+  `trial_stock_wrack` tinyint(4) NOT NULL,
+  `trial_stock_wrack_remark` varchar(100) NOT NULL,
+  `trial_stock_wrack_image` varchar(50) NOT NULL,
+  `trial_back_store` tinyint(4) NOT NULL,
+  `trial_back_store_remark` varchar(100) NOT NULL,
+  `trial_back_store_image` varchar(50) NOT NULL,
+  `trial_communication` tinyint(4) NOT NULL,
+  `trial_communication_remark` varchar(100) NOT NULL,
+  `trial_communication_image` varchar(50) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `rated_by` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`srr_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -218,6 +304,7 @@ CREATE TABLE `bs_store_rating_review` (
 
 LOCK TABLES `bs_store_rating_review` WRITE;
 /*!40000 ALTER TABLE `bs_store_rating_review` DISABLE KEYS */;
+INSERT INTO `bs_store_rating_review` VALUES (1,3,'s','',2,'s','',2,'s','',3,'s','',2,'s','',3,'t','',4,'t','',4,'t','',2,'t','',3,'t','',3,'r','',4,'r','',4,'r','',3,'r','',2,'r','',8,3,'2019-03-08 07:39:04'),(2,2,'','',4,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 07:44:33'),(3,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 07:47:15'),(4,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 07:59:40'),(5,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 07:59:51'),(6,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 07:59:56'),(7,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 08:00:21'),(8,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 08:00:31'),(9,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 08:00:54'),(10,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 08:01:03'),(11,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 08:01:07'),(12,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 08:54:25'),(13,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 09:02:34'),(14,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 09:35:05'),(15,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 09:35:52'),(16,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 09:47:20'),(17,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 09:50:12'),(18,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 10:39:59'),(19,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 10:40:50'),(20,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 10:43:41'),(21,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 10:46:42'),(22,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 10:52:05'),(23,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 11:28:17'),(24,0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',0,'','',8,3,'2019-03-08 11:30:25');
 /*!40000 ALTER TABLE `bs_store_rating_review` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -350,4 +437,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-07 17:51:52
+-- Dump completed on 2019-03-08 17:05:32

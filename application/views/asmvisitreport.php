@@ -446,7 +446,7 @@
      </div>
 
  </div>
- <p class="cc"> <a href="<?php echo base_url('Asm/calendarDetails') ?>"  type="button" name="back" class="btn btn-danger">Back</a></p>
+ <!--<p class="cc"> <a href="<?php //echo base_url('Asm/calendarDetails') ?>"  type="button" name="back" class="btn btn-danger">Back</a></p>-->
 </div>
 </div>
 	<?php } else { ?>

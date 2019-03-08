@@ -233,13 +233,14 @@ class Asm extends CI_Controller {
 
 									echo $table;
 		 }
+
 		 public function saveVisitReportStore($store_id)
 		 {
 					$this->load->model('UserModel');
 					$asm_id = $this->session->userdata['ID'];
 
 					$data['sales_front_facade'] = $this->input->post('salesFrontFacade');
-				  $data['sales_front_facade_remark'] = $this->input->post('salesFrontFacadeRemark');
+					$data['sales_front_facade_remark'] = $this->input->post('salesFrontFacadeRemark');
 					//$data['sales_front_facade_image'] = $this->input->post('salesFrontFacadeImage');
 
 					$data['sales_overall_ambience'] = $this->input->post('salesOverallAmbience');
@@ -257,7 +258,7 @@ class Asm extends CI_Controller {
 					$data['sales_window_communication'] = $this->input->post('salesWindowCommunication');
 					$data['sales_window_communication_remark'] = $this->input->post('salesWindowCommunicationRemark');
 					//$data['sales_window_communication_image'] = $this->input->post('salesWindowCommunicationImage');
-          //-------
+					 //-------
 					$data['store_about_manager'] = $this->input->post('storeAboutManager');
 					$data['store_about_manager_remark'] = $this->input->post('storeAboutManagerRemark');
 					//$data['store_about_manager_image'] = $this->input->post('storeAboutManagerImage');
@@ -306,6 +307,85 @@ class Asm extends CI_Controller {
 					{
 							$message = $this->session->set_flashdata('message', 'Report has been successfully saved!');
 							redirect(base_url('Asm/visitReportEmployee/').$store_id, 'refresh', $message);
+
+					}else{
+							$message = $this->session->set_flashdata('error', 'Database Error!');
+							redirect(base_url('Asm/calendarDetails/'), 'refresh', $message);
+				}
+		 }
+		 public function saveVisitReportEmployee($store_id)
+		 {
+					$this->load->model('UserModel');
+					$asm_id = $this->session->userdata['ID'];
+
+					$data['dress_proper'] = $this->input->post('dressProper');
+					$data['dress_proper_remark'] = $this->input->post('dressProperRemark');
+					//$data['dress_proper_image'] = $this->input->post('dressProperImage');
+
+					$data['dress_hygiene'] = $this->input->post('dressHygiene');
+					$data['dress_hygiene_remark'] = $this->input->post('dressHygieneRemark');
+					//$data['dress_hygiene_image'] = $this->input->post('dressHygieneImage');
+
+					$data['gest_welcome'] = $this->input->post('gestWelcome');
+					$data['gest_welcome_remark'] = $this->input->post('gestWelcomeRemark');
+					//$data['gest_welcome_image'] = $this->input->post('gestWelcomeImage');
+
+					$data['gest_help'] = $this->input->post('gestHelp');
+					$data['gest_help_remark'] = $this->input->post('gestHelpRemark');
+					//$data['gest_help_image'] = $this->input->post('gestHelpImage');
+
+					$data['gest_need'] = $this->input->post('gestNeed');
+					$data['gest_need_remark'] = $this->input->post('gestNeedRemark');
+					//$data['gest_need_image'] = $this->input->post('gestNeedImage');
+					 //-------
+					$data['gest_relationship'] = $this->input->post('gestRelationship');
+					$data['gest_relationship_remark'] = $this->input->post('gestRelationshipRemark');
+					//$data['gest_relationship_image'] = $this->input->post('gestRelationshipImage');
+
+					$data['gest_upt_qpc'] = $this->input->post('gestUptQpc');
+					$data['gest_upt_qpc_remark'] = $this->input->post('gestUptQpcRemark');
+					//$data['gest_upt_qpc_image'] = $this->input->post('gestUptQpcImage');
+
+					$data['gest_wow_moment'] = $this->input->post('gestWowMoment');
+					$data['gest_wow_moment_remark'] = $this->input->post('gestWowMomentRemark');
+					//$data['gest_wow_moment_image'] = $this->input->post('gestWowMomentImage');
+
+					$data['awareness_current_offers'] = $this->input->post('awarenessCurrentOffers');
+					$data['awareness_current_offers_remark'] = $this->input->post('awarenessCurrentOffersRemark');
+					//$data['awareness_current_offers_image'] = $this->input->post('awarenessCurrentOffersImage');
+
+					$data['awareness_product_categories'] = $this->input->post('awarenessProductCategories');
+					$data['awareness_product_categories_remark'] = $this->input->post('awarenessProductCategoriesRemark');
+					//$data['awareness_product_categories_image'] = $this->input->post('awarenessProductCategoriesImage');
+					//--------
+					$data['awareness_brand'] = $this->input->post('awarenessBrand');
+					$data['awareness_brand_remark'] = $this->input->post('awarenessBrandRemark');
+					//$data['awareness_brand_image'] = $this->input->post('awarenessBrandImage');
+
+					$data['awareness_targets'] = $this->input->post('awarenessTargets');
+					$data['awareness_targets_remark'] = $this->input->post('awarenessTargetsRemark');
+					//$data['awareness_targets_image'] = $this->input->post('awarenessTargetsImage');
+
+					$data['drive_commitment'] = $this->input->post('driveCommitment');
+					$data['drive_commitment_remark'] = $this->input->post('driveCommitmentRemark');
+					//$data['drive_commitment_image'] = $this->input->post('driveCommitmentImage');
+
+					$data['drive_monitors_actions'] = $this->input->post('driveMonitorsActions');
+					$data['drive_monitors_actions_remark'] = $this->input->post('driveMonitorsActionsRemark');
+					//$data['drive_monitors_actions_image'] = $this->input->post('driveMonitorsActionsImage');
+
+					$data['drive_adapt_changes'] = $this->input->post('driveAdaptChanges');
+					$data['drive_adapt_changes_remark'] = $this->input->post('driveAdaptChangesRemark');
+					//$data['drive_adapt_changes_image'] = $this->input->post('driveAdaptChangesImage');
+
+					$data['store_id'] = $store_id;
+					$asm_id = $this->session->userdata['ID'];
+					$data['rated_by'] = $asm_id;
+					$insert =  $this->db->insert('bs_employee_rating_review',$data);
+					if($insert)
+					{
+							$message = $this->session->set_flashdata('message', 'Report has been successfully saved!');
+							redirect(base_url('Asm/calendarDetails/'), 'refresh', $message);
 
 					}else{
 							$message = $this->session->set_flashdata('error', 'Database Error!');

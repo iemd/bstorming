@@ -494,7 +494,7 @@
 
               </li>
 
-              <li class="sidenav-item has-subnav <?php echo calendar_navactive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
+              <li class="sidenav-item has-subnav <?php echo asm_calendaractive($this->uri->segment(1).'/'.$this->uri->segment(2)); ?>">
                   <a href="<?php echo base_url('Asm/calendarDetails'); ?>" title="Today Meeting Status" aria-haspopup="true">
                   <span class="sidenav-icon icon icon-calendar"></span>
                   <span class="sidenav-label">Calender Details</span>

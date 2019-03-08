@@ -34,7 +34,7 @@
              <em>&nbsp;</em>
            </p>-->
            <div class="signup-form">
-             <form action="<?php //echo base_url('Asm/saveVisitReportStore/').$store_id; ?>" class="form-wizard" data-toggle="validator" novalidate="novalidate" method="post">
+             <form action="<?php echo base_url('Asm/saveVisitReportEmployee/').$store_id; ?>" class="form-wizard" data-toggle="validator" novalidate="novalidate" method="post">
                <ul class="steps">
                  <li class="step col-xs-3 active">
                    <a class="step-segment" href="#step-1" data-toggle="tab">
@@ -138,7 +138,7 @@
                                <label>Welcome the customer with a smile. </label>
                            </div>
                            <div class="col-sm-2 col-xs-4">
-                               <select name="gestSmile" class="form-control">
+                               <select name="gestWelcome" class="form-control">
                                    <option value="">Rating</option>
                                    <option value="1">1</option>
                                     <option value="2">2</option>
@@ -148,10 +148,10 @@
                                </select>
                            </div>
                           <div class="col-sm-3 col-xs-4">
-                             <input type="text" class="form-control" name="gestSmileRemark" placeholder="Remark" />
+                             <input type="text" class="form-control" name="gestWelcomeRemark" placeholder="Remark" />
                            </div>
                             <div class="col-sm-3 col-xs-4">
-                                <input type="file" class="form-control" name="gestSmileImage" />
+                                <input type="file" class="form-control" name="gestWelcomeImage" />
                            </div>
                        </div><br/>
                        <div class="row">
@@ -418,8 +418,8 @@
                            <label>Is flexible to adapt changes when needed.</label>
                        </div>
                        <div class="col-sm-2 col-xs-4">
-                           <select name="" class="form-control">
-                               <option value="driveAdaptChanges">Rating</option>
+                           <select name="driveAdaptChanges" class="form-control">
+                               <option value="">Rating</option>
                                <option value="1">1</option>
                                 <option value="2">2</option>
                                  <option value="3">3</option>
@@ -451,7 +451,7 @@
      </div>
 
  </div>
- <p class="cc"> <a href="<?php echo base_url('Asm/calendarDetails') ?>"  type="button" name="back" class="btn btn-danger">Back</a></p>
+ <!--<p class="cc"> <a href="<?php //echo base_url('Asm/calendarDetails') ?>"  type="button" name="back" class="btn btn-danger">Back</a></p>-->
 </div>
 </div>
 	<?php } else { ?>
