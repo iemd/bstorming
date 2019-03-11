@@ -143,5 +143,49 @@ class StoreModel extends CI_Model
           $result = $query->result_array();
           return $result;
        }
+       public function getStoteIdWithAllocated(){
+           $this->db->select("s.store_id as sid, s.store_name, s.address, s.manager_name, s.mobileno, s.created_at, "
+                   . "z.store_id as zsid, s.StoreID ")
+                   ->from('bs_store s')
+                   ->join('bs_zm_store z', 'z.store_id = s.store_id', 'left');
+           $query = $this->db->get();
+           if($query->num_rows() > 0){
+               return $query->result_array();
+           }else {
+               return FALSE;
+           }
+           
+       }
+       public function insertZmStore($store, $zmid){
+           for($i=0;$i<count($store);$i++){
+               $data = array(
+                   "store_id" => $store[$i],
+                   "zm_id" => $zmid
+               );
+               $this->db->insert('bs_zm_store', $data);
+           }
+           
+           if($this->db->affected_rows() > 0){
+               return TRUE;
+           }else {
+               return FALSE;
+           }
+       }
+       public function getStroeByCityId($cityid){
+           $this->db->select('s.store_id as sid, s.store_name, s.city, s.StoreID, c.city_id, c.city_name, z.store_id as zsid ')
+                   ->from('bs_store s')
+                   ->join('bs_city c', 'c.city_id = s.city')
+                   ->join('bs_zm_store z', 'z.store_id = s.store_id', 'left')
+                   ->where_in('s.city', $cityid)
+                   ->order_by('c.city_id', 'ASC');
+           $query = $this->db->get();
+           if($query->num_rows() > 0){
+               return $query->result_array();
+           }else {
+               return FALSE;
+           }
+           
+       }
+       
 }
 ?>

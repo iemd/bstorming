@@ -1,5 +1,13 @@
 <!-- /header -->
         <!-- Header-->
+        <style>
+            .modal-header{
+                background: #0288d1;
+            }
+            h4.modal-title{
+                color: #FFF;
+            }
+        </style>
  <?php $Loginid = $this->session->userdata('ID');?>
  <?php if (!empty($Loginid)){ ?>
    <div class="layout-content">
@@ -47,7 +55,10 @@
                         <?php foreach($storelist as $store) { ?>
                         <tr>
                             <td><?php echo $i; ?></td>
-                             <td><?php echo $store['StoreID']; ?></td>
+                             <td>
+                                <p data-toggle="modal" class="getstoreid" data-target="#myModal" data-storeid="<?php echo $store['store_id']; ?>"><?php echo $store['StoreID']; ?></p>
+                            </td>
+                            
                              <td><?php echo $store['store_name']; ?></td>
                              <td><?php echo $store['address']; ?></td>
                              <!--<td><?php //echo $store['city']; ?></td>
@@ -76,6 +87,28 @@
             </div>
         </div>
 </div>
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Allocated Brand Name</h4>
+        </div>
+        <div class="modal-body">
+            <div id="result_table"></div>
+          
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 	<?php } else { ?>
 
    	    <?php redirect(base_url('AdminPanel')); ?>
@@ -94,13 +127,27 @@
    <script src="<?php echo base_url('assets/js/demo.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/compose.min.js');?>"></script>
 
-   <!--<script>
-     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-     })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
-     ga('create', 'UA-83990101-1', 'auto');
-     ga('send', 'pageview');
-   </script>-->
+   <script>
+       $(document).ready(function(){
+          $(".getstoreid").click(function(){
+              var storeid = $(this).attr('data-storeid');
+                              $.ajax({
+                        url: '<?php echo base_url(); ?>Store/getBrandName',
+                        type:'POST',                        
+                        data:'store_id='+storeid,
+                          error: function(){
+                          $('#result_table').append('<p>No Any Data Found</p>');
+                          },
+                    success:function(html){
+                        $('#result_table').html(html);
+    
+
+    
+}
+                          }); // End of ajax call
+
+          }); 
+       });
+   </script>
  </body>
 </html>

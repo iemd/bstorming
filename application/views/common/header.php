@@ -256,6 +256,15 @@
                       <li><a href="#">Location Pin Access</a></li>
                     </ul>
                   </li>
+                  
+                  <li class="sidenav-item">
+                      <a href="<?php echo base_url(); ?>city-management" title="City Management" aria-haspopup="true">
+                      <span class="sidenav-icon icon icon-bitbucket"></span>
+                      <span class="sidenav-label">City Management</span>
+                    </a>
+                      
+                  </li>
+                  
                 </ul>
               </nav>
             </div>

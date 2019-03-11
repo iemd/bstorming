@@ -43,6 +43,8 @@
                                      $checked =1;
                                  }
                                }
+                              $stores = $this->BrandModel->getStroeByBrandID($brand['brand_id']);
+                               
 
                           ?>
                         <tr>
@@ -52,6 +54,25 @@
                                     <label class="label-primary" style="color:#ffffff;">&nbsp;
                                       <input type="checkbox" name="brand[]" value="<?php echo $brand['brand_id']; ?>" <?php if($checked){echo "checked";} ?>>&nbsp;<?php echo $brand['brand_name']; ?>&nbsp;&nbsp;
                                     </label>
+                                    
+                                    <?php 
+                                    if(!empty($stores)){
+                                   foreach ($stores as $srow){
+                                      ?>
+                                          
+                                     <span> (
+                                      <?php
+                                      echo $srow["store_name"].", ";
+                                     
+                                      ?>
+                                      )
+                                  </span>
+                                      <?php
+                                   }
+                               }
+                                    ?>
+                                    
+                                
 
                                 </div>
                            </td>

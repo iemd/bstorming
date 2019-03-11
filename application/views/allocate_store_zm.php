@@ -7,13 +7,15 @@
           <div class="title-bar">
 
             <h1 class="title-bar-title">
-                <span class="d-ib">ZM LIST</span>
+                <span class="d-ib">ALLOCATE STORE [<?php echo $zmlist[0]["ID"]; ?>]</span>
 
             </h1>
 
           </div>
             <div class="row gutter-xs" style="margin-top: 30px">
-                <div class="col-sm-1"></div>
+              <form action="<?php echo base_url('Zm/allocateStore/'); ?>" method="post" class="form form-horizontal" >
+                <input type="hidden" name="zmid" value="<?php echo $zmlist[0]['user_id']; ?>">
+                  <div class="col-sm-1"></div>
                 <div class="col-sm-10">
                      <div class="card">
                 <div class="card-header">
@@ -30,46 +32,68 @@
                       <thead>
                         <tr>
                           <th>Sl. No.</th>
-                          <th>Emp.ID</th>
-                          <th>DOJ</th>
-                          <th>Name</th>
+                          <th>Store ID</th>
+                          <th>Store Name</th>
+                          <th>Address</th>
+                          <th>Manager Name</th>
                           <th>Mobile No.</th>
-                          <th>View Report</th>
-                          <th>Store</th>
-                          <th>ASM</th>
-                          <th>Action</th>
+                          <th>Date</th>
+                          <th>Select Store</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <?php $i=1; ?>
-                        <?php foreach($zmlist as $zm) { ?>
-                        <tr>
+                        <?php 
+                        if(!empty($allstore)){
+                            $i=1;
+                            foreach ($allstore as $srow){
+                                ?>
+                          <tr>
                             <td><?php echo $i; ?></td>
-                             <td><?php echo $zm['ID']; ?></td>
-                             <td><?php echo $zm['doj']; ?></td>
-                             <td><?php echo $zm['name']; ?></td>
-                             <td><?php echo $zm['mobile']; ?></td>
-                             <td><a href="<?php //echo base_url('NewMeeting/editMeeting/').$row['meet_id']; ?>"><i class="fa fa-eye" style="font-size:18px;color:#0288d1"></i></a></td>
-                             <!-- <td><a href="<?php // echo base_url('Zm/selectStore/').$zm['user_id']; ?>" class="btn btn-primary btn-xs" type="button">Allocate Store</a></td>  -->
-                            <td><a href="<?php echo base_url('Zm/selectStoreFirstProcess/').$zm['user_id']; ?>" class="btn btn-primary btn-xs" type="button">Allocate Store</a></td>  
-                           
-                             <td><a href="<?php echo base_url('Zm/selectAsm/').$zm['user_id']; ?>" class="btn btn-primary btn-xs" type="button">Assign ASM</a></td>
+                             <td><?php echo $srow["StoreID"]; ?></td>
+                             <td><?php echo $srow["store_name"]; ?></td>
+                             <td><?php echo $srow["address"]; ?></td>
+                             <td><?php echo $srow["manager_name"]; ?></td>
+                             <td><?php echo $srow["mobileno"]; ?></td>
+                            <td><?php echo $srow["created_at"]; ?></td>
                              <td>
-                               <a href="<?php echo base_url('Zm/editZm/').$zm['user_id']; ?>"><i class="fa fa-edit" style="font-size:18px;color:green"></i></a>&nbsp;&nbsp;
-                               <a href="<?php echo base_url('Zm/deleteZm/').$zm['user_id']; ?>" onclick="return confirm('Are you sure?')"><i class="fa fa-trash" style="font-size:18px;color:red"></i></a></td>
+
+                                 <input type="checkbox" name="store[]" value="<?php echo $srow["sid"]; ?>" <?php if($srow["sid"] == $srow["zsid"]) { ?> disabled="" checked="" <?php } ?>  style="width:20px;height:20px;">
+
+                              </div>
                             </td>
                         </tr>
-                      <?php $i++; } ?>
+                          <?php
+                          $i++;
+                            }
+                        }else {
+                            ?>
+                        <tr>
+                            <td>
+                                <a href="<?php echo base_url('Store/createStore'); ?>" class="btn btn-primary" type="button">Create Store</a>
+                             </td>
+                          </tr>
+                        <?php
+                        }
+                        ?>
+                        
+                        
+                        
+                        
+                          
+                        
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
               <div class="text-right">
-                 <a href="<?php echo base_url('Employee/manageZmProfile'); ?>" class="btn btn-danger" type="button">Back</a>
+                 
+                 <button class="btn btn-primary" type="submit">Submit</button>
+                 <a href="<?php echo base_url('Asm/viewAsm'); ?>" class="btn btn-danger" type="button">Back</a>
               </div>
                 </div>
               <div class="col-sm-1"></div>
+             </form>
             </div>
         </div>
 </div>
@@ -91,13 +115,5 @@
    <script src="<?php echo base_url('assets/js/demo.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/compose.min.js');?>"></script>
 
-   <!--<script>
-     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-     })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
-     ga('create', 'UA-83990101-1', 'auto');
-     ga('send', 'pageview');
-   </script>-->
  </body>
 </html>

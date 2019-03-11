@@ -50,5 +50,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'AdminPanel';
+$route['city-management'] = 'City_Controller';
+$route['create-city'] = 'City_Controller/CreateCity';
+$route['save-city'] = 'City_Controller/saveCity';
+$route['view-city'] = 'City_Controller/viewCity';
+$route['fetch-pincode'] = 'City_Controller/fetchPincodeByCityId';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -33,5 +33,21 @@ class BrandModel extends CI_Model
           return false;
           }
       }
+      
+      public function getStroeByBrandID($brandid)
+       {
+          $this->db->select("sb.store_id, sb.brand_id, s.store_id, s.store_name")
+                  ->from('bs_store_brand sb')
+                  ->join('bs_store s', 's.store_id = sb.store_id')
+                  ->where('sb.brand_id', $brandid);
+          $query = $this->db->get();
+          //echo $this->db->last_query();die;
+          if($query->num_rows() > 0){
+              $result = $query->result_array();
+          return $result;
+          }else {
+              return FALSE;
+          }
+       }
 }
 ?>

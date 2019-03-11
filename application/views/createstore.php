@@ -24,19 +24,33 @@
 
                     <div class="row">
                       <label for="name" class="col-sm-2">Store Name:</label>
-                      <div class="col-sm-6"><input id="storename" name="storename" class="form-control" type="text" placeholder="Enter Store Name"></div>
+                      <div class="col-sm-6"><input id="storename" name="storename" class="form-control" type="text" required placeholder="Enter Store Name"></div>
                     </div><br/>
                     <div class="row">
                       <label for="name" class="col-sm-2">Address:</label>
-                      <div class="col-sm-6"><input id="address" name="address" class="form-control" type="text" placeholder="Enter Address"></div>
+                      <div class="col-sm-6"><input id="address" name="address" class="form-control" type="text" required placeholder="Enter Address"></div>
                     </div><br/>
                     <div class="row">
-                      <label for="name" class="col-sm-2">City:</label>
-                      <div class="col-sm-6"><input id="city" name="city" class="form-control" type="text" placeholder="Enter City"></div>
+                      <label for="city" class="col-sm-2">City:</label>
+                      <div class="col-sm-6">
+                          <select name="city" id="city" class="form-control" required >
+                              <option value="" disabled selected>--Select City Name--</option>
+                              <?php 
+                              if(!empty($result)){
+                                  foreach($result as $crow){
+                                      ?>
+                                      <option value="<?php echo $crow["city_id"]; ?>"><?php echo $crow["city_name"]; ?></option>
+                                      <?php
+                                  }
+                              }
+                              ?>
+                          </select>
+                          
+                          </div>
                     </div><br/>
                     <div class="row">
                       <label for="name" class="col-sm-2">PinCode:</label>
-                      <div class="col-sm-6"><input id="pincode" name="pincode" class="form-control" type="text" placeholder="Enter Pincode"></div>
+                      <div class="col-sm-6"><input id="pincode" name="pincode" class="form-control" type="text" readonly placeholder="Enter Pincode"></div>
                     </div><br/>
                     <div class="row">
                       <label for="name" class="col-sm-2">Manager Name:</label>
@@ -52,7 +66,7 @@
                     </div><br/>
                     <div class="row">
                     <label for="password" class="col-sm-2">Password:</label>
-                    <div class="col-sm-6"><input id="password" name="password" class="form-control" type="password" autocomplete="off" placeholder="Enter Password"></div>
+                    <div class="col-sm-6"><input id="password" name="password" class="form-control" type="password" required autocomplete="off" placeholder="Enter Password"></div>
                     </div><br/>
 
                     <div class="row">
@@ -88,13 +102,31 @@
    <script src="<?php echo base_url('assets/js/application.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/demo.min.js');?>"></script>
    <script src="<?php echo base_url('assets/js/compose.min.js');?>"></script>
-   <!--<script>
-     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-     })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
-     ga('create', 'UA-83990101-1', 'auto');
-     ga('send', 'pageview');
-   </script>-->
+   <script type="text/javascript">
+$(document).ready(function(){
+    $('#city').on('change',function(){
+        var cityid = $(this).val();        
+        if(cityid){
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url() ?>fetch-pincode',
+                dataType: 'JSON',
+                data:'city_id='+cityid,
+                success:function(html){
+                    
+                   $('#pincode').val(html.pincode); 
+                   
+                   
+                   
+                }
+            }); 
+        }else{
+            $('#durationlimit').val(''); 
+            
+        }
+    });
+	});
+	</script>
+   
  </body>
 </html>

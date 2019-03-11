@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Zm extends CI_Controller {
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('StoreModel');
+        $this->load->model('UserModel');
+        $this->load->model('City_Model');
+    }
 
 	 public function index()
 		{
@@ -122,5 +128,56 @@ class Zm extends CI_Controller {
 				$this->load->view('common/header');
 				$this->load->view('zmasmlist', $data);
 		}
+		public function selectStore($zm_id = NULL)
+                                {
+                         $data["allstore"] = $this->StoreModel->getStoteIdWithAllocated();
+                         $data["zmlist"] = $this->UserModel->getUser($zm_id);
+			 $this->load->view('common/header');
+			 $this->load->view('allocate_store_zm', $data);
+                                }
+                 public function allocateStore(){
+                    $storeid = $this->input->post('store');                    
+                    $zmid = $this->input->post('zmid');
+                    if(!empty($storeid)){
+                        $result = $this->StoreModel->insertZmStore($storeid, $zmid);
+                        if($result === TRUE){
+                            $this->session->set_flashdata("message", "Store Assinged Successfully.");
+                             redirect('Zm/selectStore/'.$zmid);
+                        }else {
+                            $this->session->set_flashdata("error", "Some problems ocured");
+                        redirect('Zm/selectStore/'.$zmid);
+                        }
+                    }else {
+                        $this->session->set_flashdata("error", "Please Select Store");
+                        redirect('Zm/selectStore/'.$zmid);
+                    }
+                    
+                 }
+                 public function selectStoreFirstProcess($zmid = NULL){
+                     $data["zmid"] = $zmid;
+                     $data["allcity"] = $this->City_Model->fetchAllCity();
+                     $this->load->view('common/header');
+                     $this->load->view('select_city', $data);
+                         
+                     
+                 }
+                 
+                 public function getStorName(){
+                     $cityid = $this->input->post('city_id');
+                     $result = $this->StoreModel->getStroeByCityId($cityid);
+                     if(!empty($result)){
+                         foreach ($result as $row){
+                             echo "<tr>";
+                             echo "<td>".$row["StoreID"]."</td>";
+                             echo "<td>".$row["store_name"]."</td>";
+                             echo "<td>".$row["city_name"]."</td>";
+                             echo "<td><input type='checkbox' name='store[]' value='".$row['sid']."' style='width:20px;height:20px;'></td>";
+                             echo "</tr>";
+                         }
+                     }else{
+                         echo '0';
+                     }
+                 }
+
 
 }

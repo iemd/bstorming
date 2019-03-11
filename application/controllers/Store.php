@@ -2,6 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Store extends CI_Controller {
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('StoreModel');
+        $this->load->model('City_Model');
+    }
 
 	 public function index()
 		{
@@ -12,6 +17,7 @@ class Store extends CI_Controller {
     {
 			  $this->load->model('StoreModel');
 			  $data['store'] = $this->StoreModel->getStore();
+			  $data["result"] = $this->City_Model->fetchAllCity();
         $this->load->view('common/header');
         $this->load->view('createstore',$data);
     }
@@ -99,4 +105,24 @@ class Store extends CI_Controller {
 
 				}
 			}
+			
+			public function getBrandName(){
+                            $storeid = $this->input->post('store_id');
+                              $data = $this->StoreModel->getBrandByStoreId($storeid);
+                                if(!empty($data)){
+                                    foreach($data as $row){
+                                    echo "<ul>";
+                                    echo "<li>".$row["brand_name"]."</li>";
+                                    echo "</ul>";
+                                }
+                                }else {
+                                   
+                                    echo "<ul>";
+                                    echo "<li>No Any Data Found</li>";
+                                    echo "</ul>";
+                               
+                                }
+                                
+
+                        }
   }
